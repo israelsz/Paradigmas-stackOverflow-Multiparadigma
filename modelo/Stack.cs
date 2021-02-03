@@ -16,6 +16,9 @@ namespace modelo
         //Constructor
         public Stack()
         {
+            this.preguntas = new List<Pregunta>();
+            this.usuarios = new List<Usuario>();
+            this.etiquetas = new List<Etiqueta>();
         }
 
         //Getters y Setters

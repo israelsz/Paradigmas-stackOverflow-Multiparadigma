@@ -1,8 +1,8 @@
-﻿<Application x:Class="lab4.App"
+﻿<Application x:Class="vista.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:lab4"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:vista"
+             StartupUri="ventanaInicial.xaml">
     <Application.Resources>
          
     </Application.Resources>
