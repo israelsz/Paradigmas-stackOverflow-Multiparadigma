@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="#FF176414">
         <Button x:Name="botonRegister" Content="Registrarse" HorizontalAlignment="Left" Height="62" Margin="282,0,0,0" VerticalAlignment="Center" Width="197" Background="White" BorderBrush="White" Foreground="Black" Click="botonRegister_Click"/>
-        <Button x:Name="botonLogin" Content="Conectarse a su cuenta&#xD;&#xA;" HorizontalAlignment="Left" Height="56" Margin="284,282,0,0" VerticalAlignment="Top" Width="197" Background="White"/>
+        <Button x:Name="botonLogin" Content="Conectarse a su cuenta&#xD;&#xA;" HorizontalAlignment="Left" Height="56" Margin="284,282,0,0" VerticalAlignment="Top" Width="197" Background="White" Click="botonLogin_Click"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,109,0,0" Text="Sistema de Foro" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="192" FontSize="20" FontWeight="Bold" Foreground="White"/>
     </Grid>
 </Window>

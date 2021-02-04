@@ -19,10 +19,11 @@ namespace vista
     public partial class VentanaRegistro : Window
     {
         //Se invoca al controlador.
-        Controlador controlador = new Controlador();
-        public VentanaRegistro()
+        Controlador controlador;
+        public VentanaRegistro(Controlador controlador)
         {
             InitializeComponent();
+            this.controlador = controlador;
         }
 
         private void button_RegisterNewUser_Click(object sender, RoutedEventArgs e)
@@ -40,11 +41,13 @@ namespace vista
             {
                 MessageBox.Show("El usuario ya esta registrado");
             }
+            TextBox_Username.Clear();
+            PasswordBox_Password.Clear();
         }
 
         private void Button_VolverAtras_Click(object sender, RoutedEventArgs e)
         {
-            VentanaInicial ventanaInicial = new VentanaInicial();
+            VentanaInicial ventanaInicial = new VentanaInicial(controlador);
             ventanaInicial.Show();
             this.Close();
         }

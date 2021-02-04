@@ -9,12 +9,12 @@ namespace controlador
     public class Controlador
     {
         //Atributos
-         private Stack stack;
+         private Stack stack; //Modelo
 
         //Constructor
-        public Controlador()
+        public Controlador(Stack stack)
         {
-            this.stack = new Stack(); //El controlador toma del modelo a stack para controlarlo
+            this.stack = stack; //El controlador toma del modelo a stack para controlarlo
         }
 
         //Metodos
@@ -31,6 +31,19 @@ namespace controlador
                 return true;
             }
            
+        }
+
+        public bool Login(string username, string password)
+        {
+            //Se verifica la existencia del usuario en el stack
+            if(stack.Usuarios.Any(i=>i.Username == username && i.Password == password))
+            {
+                //Si se encontro al usuario y su contraseña corresponde se establece como usuario conectado
+                stack.UsuarioConectado = stack.Usuarios.Find(i => i.Username == username);
+                Console.WriteLine("Usuario conectado = " + stack.UsuarioConectado.Username);
+                return true;
+            }
+            return false;
         }
     }
 }
