@@ -9,7 +9,8 @@ namespace controlador
     public class Controlador
     {
         //Atributos
-         private Stack stack; //Modelo
+        //Modelo
+        private Stack stack;
 
         //Constructor
         public Controlador(Stack stack)
@@ -18,6 +19,155 @@ namespace controlador
         }
 
         //Metodos
+
+        public void llenarStackInicial()
+        {
+            //Etiquetas
+
+            Etiqueta etiqueta1 = new Etiqueta("Python", "python es un lenguaje interpretado, multiparadigma que busca favorecer un codigo legible");
+            List<Etiqueta> listaEtiqueta1 = new List<Etiqueta>();
+            stack.Etiquetas.Add(etiqueta1);
+            listaEtiqueta1.Add(etiqueta1);
+            Etiqueta etiqueta2 = new Etiqueta("C", "C es un lenguaje de alto rendimiento de proposito general fuertemente tipado");
+            List<Etiqueta> listaEtiqueta2 = new List<Etiqueta>();
+            stack.Etiquetas.Add(etiqueta2);
+            listaEtiqueta2.Add(etiqueta2);
+            Etiqueta etiqueta3 = new Etiqueta("Java", "Java es un lenguaje de programacion de proposito general, que soporta la orientacion a objetos");
+            List<Etiqueta> listaEtiqueta3 = new List<Etiqueta>();
+            stack.Etiquetas.Add(etiqueta3);
+            listaEtiqueta3.Add(etiqueta3);
+
+            Pregunta pregunta1 = new Pregunta("Como hacer hola mundo en python",
+                "Como el titulo dice, no conozco la funcion necesaria para poder mostrar hola mundo por pantalla en python",
+                listaEtiqueta1);
+            //Fecha 16/11/2020
+            Pregunta pregunta2 = new Pregunta("Asignar memoria a un arreglo en C",
+                    "En C ¿como puedo asignar memoria a un arreglo?",
+                    listaEtiqueta2);
+            //Fecha 16/11/2020
+            Pregunta pregunta3 = new Pregunta("como printear cosas en java ?",
+                    "Hola soy nuevo al lenguaje java, que metodo puedo usar para printear una string por ejemplo ?",
+                    listaEtiqueta3);
+            //Fecha 16/11/2020
+            Pregunta pregunta4 = new Pregunta("librerias en python",
+                    "Hola como puedo instalar una libreria en python?",
+                    listaEtiqueta1);
+            //Fecha 17/11/2020
+            Pregunta pregunta5 = new Pregunta("definir clases en java",
+                    "¿Como puedo crear una nueva clase en java?",
+                    listaEtiqueta3);
+            //Fecha 17/11/2020
+            Usuario usuario1 = new Usuario("israel", "qwerty");
+            Usuario usuario2 = new Usuario("pedro", "123");
+            Usuario usuario3 = new Usuario("juan", "asd");
+            Usuario usuario4 = new Usuario("maria", "hola123");
+
+
+
+            Respuesta respuesta1 = new Respuesta("Hola, puedes usar malloc para asignarle memoria");
+            //Fecha 18/11/2020
+            Respuesta respuesta2 = new Respuesta("Intenta usar print(Hola mundo)");
+            //Fecha 18/11/2020
+            Respuesta respuesta3 = new Respuesta("Tambien puedes asignar la cantidad de elementos del arreglo, como int *arreglo[100]");
+            //Fecha 18/11/2020
+            Respuesta respuesta4 = new Respuesta("public class *nombre clase*, puedes cambiar el public a privado o al que necesites");
+            //Fecha 19/11/2020
+            Respuesta respuesta5 = new Respuesta("en la cmd usa el comando pip install *nombreLibreria*");
+            //Fecha 19/11/2020
+            Respuesta respuesta6 = new Respuesta("debes indicar la visibilidad el tipo de clase (public,private,abstract,etc) y su nombre");
+            //Fecha 19/11/2020
+            Respuesta respuesta7 = new Respuesta("el metodo  System.out.println(); deberia cumplir lo que quieres");
+            //Fecha 19/11/2020
+            Respuesta respuesta8 = new Respuesta("aportando a la respuesta anterior, dentro de los parentesis debes indicar lo que quieres imprimir");
+            //Fecha 20/11/2020
+            Respuesta respuesta9 = new Respuesta("Un ejemplo puede ser public class nuevaClase { }");
+            //Fecha 20/11/2020
+            Respuesta respuesta10 = new Respuesta("podrias usar print, muestra cosas por pantalla");
+            //Fecha 20/11/2020
+
+            pregunta1.Autor = usuario1;
+            pregunta1.Fecha = "16/11/=2020";
+            pregunta1.Respuestas.Add(respuesta2);
+
+            respuesta2.Autor = usuario2;
+            respuesta2.Fecha = "18/11/2020";
+            usuario2.RespuestasRealizadas.Add(respuesta2);
+
+            pregunta1.Respuestas.Add(respuesta10);
+            respuesta10.Autor = usuario3;
+            respuesta10.Fecha = "20/11/2020";
+            usuario3.RespuestasRealizadas.Add(respuesta10);
+            usuario1.PreguntasRealizadas.Add(pregunta1);
+
+            pregunta2.Fecha = "16/11/2020";
+            pregunta2.Autor = usuario2;
+
+            pregunta2.Respuestas.Add(respuesta1);
+            respuesta1.Autor = usuario1;
+            respuesta1.Fecha = "18/11/2020";
+            usuario1.RespuestasRealizadas.Add(respuesta1);
+
+            pregunta2.Respuestas.Add(respuesta3);
+            respuesta3.Autor = usuario4;
+            respuesta3.Fecha = "18/11/2020";
+            usuario4.RespuestasRealizadas.Add(respuesta3);
+            usuario2.PreguntasRealizadas.Add(pregunta2);
+
+            pregunta3.Fecha = "16/11/2020";
+            pregunta3.Autor = usuario3;
+
+            pregunta3.Respuestas.Add(respuesta7);
+            respuesta7.Autor = usuario1;
+            respuesta7.Fecha = "19/11/2020";
+            usuario1.RespuestasRealizadas.Add(respuesta7);
+
+            pregunta3.Respuestas.Add(respuesta8);
+            respuesta8.Autor = usuario4;
+            respuesta8.Fecha = "20/11/2020";
+            usuario4.RespuestasRealizadas.Add(respuesta8);
+            usuario3.PreguntasRealizadas.Add(pregunta3);
+
+            pregunta4.Fecha = "17/11/2020";
+            pregunta4.Autor = usuario4;
+
+            pregunta4.Respuestas.Add(respuesta5);
+            respuesta5.Autor = usuario1;
+            respuesta5.Fecha = "19/11/2020";
+            usuario1.RespuestasRealizadas.Add(respuesta5);
+            usuario4.PreguntasRealizadas.Add(pregunta4);
+
+            pregunta5.Fecha = "17/11/2020";
+            pregunta5.Autor = usuario3;
+
+            pregunta5.Respuestas.Add(respuesta4);
+            respuesta4.Autor = usuario4;
+            respuesta4.Fecha = "19/11/2020";
+            usuario4.RespuestasRealizadas.Add(respuesta4);
+
+            pregunta5.Respuestas.Add(respuesta6);
+            respuesta6.Autor = usuario1;
+            respuesta6.Fecha = "19/11/2020";
+            usuario1.RespuestasRealizadas.Add(respuesta6);
+
+            pregunta5.Respuestas.Add(respuesta9);
+            respuesta9.Autor = usuario2;
+            respuesta9.Fecha = "20/11/2020";
+            usuario2.RespuestasRealizadas.Add(respuesta9);
+            usuario3.PreguntasRealizadas.Add(pregunta5);
+
+            //Se agregan las preguntas y usuarios al stack
+            stack.Preguntas.Add(pregunta1);
+            stack.Preguntas.Add(pregunta2);
+            stack.Preguntas.Add(pregunta3);
+            stack.Preguntas.Add(pregunta4);
+            stack.Preguntas.Add(pregunta5);
+
+            stack.Usuarios.Add(usuario1);
+            stack.Usuarios.Add(usuario2);
+            stack.Usuarios.Add(usuario3);
+            stack.Usuarios.Add(usuario4);
+        }
+
         public bool Register(string username, string password)
         {
             //Se verifica en primer lugar que no exista el usuario:
@@ -40,10 +190,22 @@ namespace controlador
             {
                 //Si se encontro al usuario y su contraseña corresponde se establece como usuario conectado
                 stack.UsuarioConectado = stack.Usuarios.Find(i => i.Username == username);
-                Console.WriteLine("Usuario conectado = " + stack.UsuarioConectado.Username);
+                //Se cambia el estado del stack, ahora hay alguien conectado
+                stack.Conectado = true;
+                //Retorna true al haberse podido loguear
                 return true;
             }
             return false;
         }
+
+        public string getLoggedUsername()
+        {
+            if(stack.Conectado == true)
+            {
+                return stack.UsuarioConectado.Username;
+            }
+            return "";
+        }
+       
     }
 }

@@ -43,6 +43,9 @@ namespace vista
             else if (controlador.Login(TextBox_Username.Text, PasswordBox_Password.Password)){
                 //Si fue posible loguearse
                 MessageBox.Show("Logueo correcto");
+                ventanaPrincipal ventanaPrincipal = new ventanaPrincipal(controlador);
+                ventanaPrincipal.Show();
+                this.Close();
             }
             else
             {

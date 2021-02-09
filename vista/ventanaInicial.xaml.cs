@@ -27,6 +27,8 @@ namespace vista
         {
             InitializeComponent();
             this.controlador = controlador;
+            //Se llena el stack de informacion
+            controlador.llenarStackInicial();
         }
 
         private void botonRegister_Click(object sender, RoutedEventArgs e)
