@@ -18,16 +18,15 @@ namespace vista
     /// </summary>
     public partial class VentanaLogin : Window
     {
-        Controlador controlador;
-        public VentanaLogin(Controlador controlador)
+        Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
+        public VentanaLogin()
         {
             InitializeComponent();
-            this.controlador = controlador;
         }
 
         private void Button_volverAtras_Click(object sender, RoutedEventArgs e)
         {
-            VentanaInicial ventanaInicial = new VentanaInicial(controlador);
+            VentanaInicial ventanaInicial = new VentanaInicial();
             ventanaInicial.Show();
             this.Close();
         }
@@ -43,7 +42,7 @@ namespace vista
             else if (controlador.Login(TextBox_Username.Text, PasswordBox_Password.Password)){
                 //Si fue posible loguearse
                 MessageBox.Show("Logueo correcto");
-                ventanaPrincipal ventanaPrincipal = new ventanaPrincipal(controlador);
+                ventanaPrincipal ventanaPrincipal = new ventanaPrincipal();
                 ventanaPrincipal.Show();
                 this.Close();
             }

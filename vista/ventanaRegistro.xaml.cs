@@ -19,11 +19,11 @@ namespace vista
     public partial class VentanaRegistro : Window
     {
         //Se invoca al controlador.
-        Controlador controlador;
-        public VentanaRegistro(Controlador controlador)
+        Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
+
+        public VentanaRegistro()
         {
             InitializeComponent();
-            this.controlador = controlador;
         }
 
         private void button_RegisterNewUser_Click(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace vista
 
         private void Button_VolverAtras_Click(object sender, RoutedEventArgs e)
         {
-            VentanaInicial ventanaInicial = new VentanaInicial(controlador);
+            VentanaInicial ventanaInicial = new VentanaInicial();
             ventanaInicial.Show();
             this.Close();
         }

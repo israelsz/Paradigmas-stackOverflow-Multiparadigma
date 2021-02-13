@@ -22,25 +22,25 @@ namespace vista
 
     public partial class VentanaInicial : Window
     {
-        Controlador controlador;
-        public VentanaInicial(Controlador controlador)
+        Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
+
+        public VentanaInicial()
         {
             InitializeComponent();
-            this.controlador = controlador;
             //Se llena el stack de informacion
             controlador.llenarStackInicial();
         }
 
         private void botonRegister_Click(object sender, RoutedEventArgs e)
         {
-            VentanaRegistro registro = new VentanaRegistro(controlador);
+            VentanaRegistro registro = new VentanaRegistro();
             registro.Show();
             this.Close();
         }
 
         private void botonLogin_Click(object sender, RoutedEventArgs e)
         {
-            VentanaLogin login = new VentanaLogin(controlador);
+            VentanaLogin login = new VentanaLogin();
             login.Show();
             this.Close();
         }

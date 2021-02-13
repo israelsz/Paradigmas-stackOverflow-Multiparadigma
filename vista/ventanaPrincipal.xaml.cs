@@ -19,11 +19,10 @@ namespace vista
     /// </summary>
     public partial class ventanaPrincipal : Window
     {
-        Controlador controlador;
-        public ventanaPrincipal(Controlador controlador)
+        Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
+        public ventanaPrincipal()
         {
             InitializeComponent();
-            this.controlador = controlador;
             TextBlock_InfoUsuario.Text = "Conectado como: " + controlador.getLoggedUsername();
         }
 

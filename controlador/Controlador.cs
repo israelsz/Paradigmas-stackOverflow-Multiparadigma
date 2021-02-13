@@ -11,14 +11,27 @@ namespace controlador
         //Atributos
         //Modelo
         private Stack stack;
+        private static Controlador instancia;
 
         //Constructor
-        public Controlador(Stack stack)
+        public Controlador()
         {
-            this.stack = stack; //El controlador toma del modelo a stack para controlarlo
+            this.stack = new Stack();
         }
 
         //Metodos
+        public static Controlador Instancia
+        {
+            get 
+            {
+                if (instancia == null)
+                {
+                    instancia = new Controlador();
+                }
+                return instancia;
+            }
+       
+        }
 
         public void llenarStackInicial()
         {
