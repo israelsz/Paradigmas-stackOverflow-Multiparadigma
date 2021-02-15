@@ -24,8 +24,15 @@ namespace vista
         {
             InitializeComponent();
             TextBlock_InfoUsuario.Text = "Conectado como: " + controlador.getLoggedUsername();
+            ListBox_Preguntas.ItemsSource = controlador.GetPreguntas();
         }
 
-
+        private void Button_Logout_Click(object sender, RoutedEventArgs e)
+        {
+            controlador.Logout();
+            VentanaInicial ventanaInicial = new VentanaInicial();
+            ventanaInicial.Show();
+            this.Close();
+        }
     }
 }
