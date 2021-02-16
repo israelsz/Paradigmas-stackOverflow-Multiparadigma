@@ -6,16 +6,11 @@
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
-    <Grid Margin="10,111,0,0" Background="#FF5E83FF">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="200*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="170" FontWeight="Bold" FontSize="16" FontFamily="Consolas" Text="{Binding Titulo}"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="155" FontWeight="Bold" FontSize="16" FontFamily="Consolas" Text="{Binding Autor.Username}" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="155" FontWeight="Bold" FontSize="16" FontFamily="Consolas" Text="{Binding Respuestas.Count}" Grid.Column="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Width="155" FontWeight="Bold" FontSize="16" FontFamily="Consolas" Text="{Binding Fecha}" Grid.Column="3"/>
+    <Grid Width="696" Height="191">
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="ContenidoR" TextWrapping="Wrap" VerticalAlignment="Top" Height="86" Width="622"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="50,146,0,0" Text="AutorR" TextWrapping="Wrap" VerticalAlignment="Top" Width="133"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="250,146,0,0" Text="Fecha" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="475,146,0,0" Text="Votos" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="600,145,0,0" Text="idR" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

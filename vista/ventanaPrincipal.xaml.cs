@@ -34,5 +34,14 @@ namespace vista
             ventanaInicial.Show();
             this.Close();
         }
+
+        private void ListBox_Preguntas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int indice = ListBox_Preguntas.Items.IndexOf(ListBox_Preguntas.SelectedItem);
+            //MessageBox.Show("Indice de lo seleccionado = " + indice);
+            ventanaPreguntaRespuesta ventanaPreguntaRespuesta = new ventanaPreguntaRespuesta(indice);
+            ventanaPreguntaRespuesta.Show();
+            this.Close();
+        }
     }
 }

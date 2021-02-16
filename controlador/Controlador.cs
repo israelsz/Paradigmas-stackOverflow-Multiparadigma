@@ -104,7 +104,7 @@ namespace controlador
                 //Fecha 20/11/2020
 
                 pregunta1.Autor = usuario1;
-                pregunta1.Fecha = "16/11/=2020";
+                pregunta1.Fecha = "16/11/2020";
                 pregunta1.Respuestas.Add(respuesta2);
 
                 respuesta2.Autor = usuario2;
@@ -238,6 +238,67 @@ namespace controlador
         {
             stack.Conectado = false;
 
+        }
+
+        public string getTitulo(int indice)
+        {
+            return stack.Preguntas[indice].Titulo;
+        }
+
+        public string getContenido(int indice)
+        {
+            return stack.Preguntas[indice].Contenido;
+        }
+
+        public List<Etiqueta> GetQuestionLabels(int indice)
+        {
+            return stack.Preguntas[indice].Etiquetas;
+        }
+
+        public List<Respuesta> GetRespuestas(int indice)
+        {
+            return stack.Preguntas[indice].Respuestas;
+        }
+        
+        public string getQuestionFecha(int indice)
+        {
+            return stack.Preguntas[indice].Fecha;
+        }
+
+        public int getQuestionVotes(int indice)
+        {
+            return stack.Preguntas[indice].Votos;
+        }
+        
+        public string GetQuestionStatus(int indice)
+        {
+            return stack.Preguntas[indice].Estado;
+        }
+
+        public string GetQuestionAutor(int indice)
+        {
+            return stack.Preguntas[indice].Autor.Username;
+        }
+
+        public int GetQuestionId(int indice)
+        {
+            return stack.Preguntas[indice].Id;
+        }
+
+        public Pregunta GetQuestionbyIndex(int indice)
+        {
+            return stack.Preguntas[indice];
+        }
+        public void Answer(Pregunta pregunta,string contenido)
+        {
+            //Se crea la respuesta
+            Respuesta respuesta = new Respuesta(contenido);
+            //Se consigue al autor de la respuesta y se asigna
+            respuesta.Autor = stack.UsuarioConectado;
+            //Se agrega la respuesta creada al usuario correspondiente
+            stack.UsuarioConectado.RespuestasRealizadas.Add(respuesta);
+            //Se añade la respuesta a la lista de respuestas de la pregunta
+            pregunta.Respuestas.Add(respuesta);
         }
     }
 }

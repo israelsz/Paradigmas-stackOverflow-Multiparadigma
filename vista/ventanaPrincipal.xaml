@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="ventanaPrincipal" Height="552" Width="853">
+        Title="ventanaPrincipal" Height="567" Width="853">
     <Grid Background="#FF25A27B" Margin="0,0,0,-6">
         <TextBlock x:Name="TextBlock_InfoUsuario" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="16" FontWeight="Bold" Text="a"/>
-        <ListBox x:Name="ListBox_Preguntas" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" Height="334" Margin="0,134,0,0" VerticalAlignment="Top" Width="780">
+        <ListBox x:Name="ListBox_Preguntas" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" Height="334" Margin="0,134,0,0" VerticalAlignment="Top" Width="780" MouseDoubleClick="ListBox_Preguntas_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="#FF5E83FF">
@@ -38,6 +38,6 @@
             <Label Content="N° Respuestas" Grid.Column="2" FontWeight="Bold" FontFamily="Consolas" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" />
             <Label Content="Fecha" Grid.Column="3" FontWeight="Bold" FontFamily="Consolas" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
-        <Button x:Name="Button_Logout" Content="Desconectarse" HorizontalAlignment="Left" Height="31" Margin="10,493,0,0" VerticalAlignment="Top" Width="120" Background="White" FontWeight="Bold" FontSize="14" Click="Button_Logout_Click"/>
+        <Button x:Name="Button_Logout" Content="Desconectarse" HorizontalAlignment="Left" Height="31" Margin="26,493,0,0" VerticalAlignment="Top" Width="120" Background="White" FontWeight="Bold" FontSize="14" Click="Button_Logout_Click"/>
     </Grid>
 </Window>
