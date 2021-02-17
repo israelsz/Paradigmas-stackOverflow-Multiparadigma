@@ -1,0 +1,42 @@
+﻿<Window x:Class="vista.ventanaCrearPregunta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vista"
+        mc:Ignorable="d"
+        Title="ventanaCrearPregunta" Height="450" Width="921">
+    <Grid Background="#FFCDCD57">
+        <Label Content="Ingrese el titulo de su pregunta:" HorizontalAlignment="Left" Height="29" Margin="36,28,0,0" VerticalAlignment="Top" Width="235" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="tb_Titulo" HorizontalAlignment="Left" Height="28" Margin="36,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444"/>
+        <Label Content="Ingrese el contenido de su pregunta:" HorizontalAlignment="Left" Height="30" Margin="36,108,0,0" VerticalAlignment="Top" Width="235" FontWeight="Bold"/>
+        <TextBox x:Name="tb_Contenido" HorizontalAlignment="Left" Height="48" Margin="36,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="575"/>
+        <Label Content="Seleccione las etiquetas para su pregunta" HorizontalAlignment="Left" Height="32" Margin="36,217,0,0" VerticalAlignment="Top" Width="272" FontWeight="Bold"/>
+        <ComboBox x:Name="cb_SeleccionEtiquetas" HorizontalAlignment="Left" Height="28" Margin="36,254,0,0" VerticalAlignment="Top" Width="222">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding NombreEtiqueta}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock x:Name="tb_DescripcionEtiqueta" HorizontalAlignment="Left" Height="83" Margin="325,248,0,0" Text="{Binding UpdateSourceTrigger=PropertyChanged,
+                          ElementName=cb_SeleccionEtiquetas,
+                          Mode=TwoWay,Path=SelectedItem.DescripcionEtiqueta}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <Label Content="Descripción de la etiqueta" HorizontalAlignment="Left" Height="32" Margin="346,217,0,0" VerticalAlignment="Top" Width="172" FontWeight="Bold"/>
+        <ListBox x:Name="lb_EtiquetasSeleccionadas" HorizontalAlignment="Left" Height="90" Margin="636,241,0,0" VerticalAlignment="Top" Width="259">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding NombreEtiqueta}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Etiquetas seleccionadas" HorizontalAlignment="Left" Height="29" Margin="660,207,0,0" VerticalAlignment="Top" Width="178" FontWeight="Bold"/>
+        <Button x:Name="btn_CrearEtiqueta" Content="Crear nueva etiqueta" HorizontalAlignment="Left" Height="46" Margin="36,330,0,0" VerticalAlignment="Top" Width="147" FontWeight="Bold" Background="#FFFDFDFD" Click="btn_CrearEtiqueta_Click"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="47" Margin="745,14,0,0" VerticalAlignment="Top" Width="150" Background="#FFFFFEFE" FontWeight="Bold" FontSize="14" Click="btn_Cancelar_Click"/>
+        <Button x:Name="btn_PublicarPregunta" Content="Publicar pregunta" HorizontalAlignment="Left" Height="39" Margin="593,365,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" FontSize="14" Background="#FFFFFEFE" Click="btn_PublicarPregunta_Click"/>
+        <Button x:Name="btn_AgregarEtiqueta" Content="&gt;&gt;" HorizontalAlignment="Left" Height="34" Margin="562,233,0,0" VerticalAlignment="Top" Width="49" Background="White" FontWeight="Bold" FontSize="18" Click="btn_AgregarEtiqueta_Click"/>
+        <Button x:Name="btn_EliminarEtiqueta" Content="&lt;&lt;" HorizontalAlignment="Left" Height="34" Margin="562,297,0,0" VerticalAlignment="Top" Width="49" FontWeight="Bold" FontSize="18" Background="White" Click="btn_EliminarEtiqueta_Click"/>
+    </Grid>
+</Window>

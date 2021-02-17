@@ -39,5 +39,6 @@
             <Label Content="Fecha" Grid.Column="3" FontWeight="Bold" FontFamily="Consolas" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Grid>
         <Button x:Name="Button_Logout" Content="Desconectarse" HorizontalAlignment="Left" Height="31" Margin="26,493,0,0" VerticalAlignment="Top" Width="120" Background="White" FontWeight="Bold" FontSize="14" Click="Button_Logout_Click"/>
+        <Button x:Name="btn_HacerPregunta" Content="Hacer una pregunta" HorizontalAlignment="Left" Height="40" Margin="654,51,0,0" VerticalAlignment="Top" Width="162" Background="White" FontWeight="Bold" Click="btn_HacerPregunta_Click"/>
     </Grid>
 </Window>

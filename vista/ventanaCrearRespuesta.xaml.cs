@@ -33,10 +33,16 @@ namespace vista
 
         private void btn_AgregarRespuesta_Click(object sender, RoutedEventArgs e)
         {
-            controlador.Answer(controlador.GetQuestionbyIndex(Indice), tb_ContenidoRespuesta.Text);
-            MessageBox.Show("Respuesta Agregada");
-            ventanaPreguntaRespuesta.lb_Respuestas.Items.Refresh();
-            this.Close();
+            if(tb_ContenidoRespuesta.Text == "")
+            {
+                MessageBox.Show("Debe escribir una respuesta");
+            } else
+            {
+                controlador.Answer(controlador.GetQuestionbyIndex(Indice), tb_ContenidoRespuesta.Text);
+                MessageBox.Show("Respuesta Agregada");
+                ventanaPreguntaRespuesta.lb_Respuestas.Items.Refresh();
+                this.Close();
+            }
         }
 
         private void btn_Cancelar_Click(object sender, RoutedEventArgs e)

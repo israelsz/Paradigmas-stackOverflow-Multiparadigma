@@ -300,5 +300,37 @@ namespace controlador
             //Se añade la respuesta a la lista de respuestas de la pregunta
             pregunta.Respuestas.Add(respuesta);
         }
+
+        public List<Etiqueta> GetEtiquetas()
+        {
+            return stack.Etiquetas;
+        }
+
+        public void Ask(string titulo, string contenido, List<Etiqueta> etiquetas)
+        {
+            //Se crea la pregunta
+            Pregunta pregunta = new Pregunta(titulo, contenido, etiquetas);
+            //Se agrega al autor de la pregunta
+            pregunta.Autor = stack.UsuarioConectado;
+            //Se agrega la pregunta al stack
+            stack.Preguntas.Add(pregunta);
+        }
+
+        public bool CrearEtiqueta(string nombre, string descripcion)
+        {
+            //Se verifica que no exista una etiqueta con el mismo nombre
+            if(stack.Etiquetas.Any(i => i.NombreEtiqueta == nombre)){
+                //Se encontro una etiqueta con el mismo nombre
+                return false;
+            }
+            else
+            {
+                //Si no existe una etiqueta con el mismo nombre, se creara
+                Etiqueta etiqueta = new Etiqueta(nombre, descripcion);
+                //Se agrega la etiqueta creada al stack
+                stack.Etiquetas.Add(etiqueta);
+                return true;
+            }
+        }
     }
 }

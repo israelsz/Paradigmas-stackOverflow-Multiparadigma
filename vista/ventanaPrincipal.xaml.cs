@@ -43,5 +43,12 @@ namespace vista
             ventanaPreguntaRespuesta.Show();
             this.Close();
         }
+
+        private void btn_HacerPregunta_Click(object sender, RoutedEventArgs e)
+        {
+            ventanaCrearPregunta ventanaCrearPregunta = new ventanaCrearPregunta();
+            ventanaCrearPregunta.Show();
+            this.Close();
+        }
     }
 }
