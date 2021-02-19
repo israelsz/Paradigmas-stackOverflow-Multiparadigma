@@ -40,6 +40,7 @@ namespace vista
             tb_Id.Text = "Id: " + controlador.GetQuestionId(Indice);
             lb_Etiquetas.ItemsSource = controlador.GetQuestionLabels(Indice);
             lb_Respuestas.ItemsSource = controlador.GetRespuestas(Indice);
+            tb_Recompensa.Text = "Recompensa: " + controlador.GetQuestionReward(Indice);
         }
 
         private void btn_Cerrar_Click(object sender, RoutedEventArgs e)
@@ -53,6 +54,19 @@ namespace vista
         {
             ventanaCrearRespuesta ventanaCrearRespuesta = new ventanaCrearRespuesta(Indice,this);
             ventanaCrearRespuesta.Show();
+        }
+
+        private void btn_DarRecompensa_Click(object sender, RoutedEventArgs e)
+        {
+            if(controlador.GetQuestionStatus(Indice) == "abierta")
+            {
+                ventanaReward ventanaReward = new ventanaReward(Indice, this);
+                ventanaReward.Show();
+            }
+            else
+            {
+                MessageBox.Show("No puede ofrecer una recompensa a una pregunta cerrada");
+            }
         }
     }
 }

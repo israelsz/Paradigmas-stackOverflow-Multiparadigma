@@ -34,7 +34,7 @@ namespace modelo
             this.votos = 0;
             //Para conseguir la fecha:
             DateTime fechaActual = DateTime.Now;
-            this.fecha = fechaActual.ToString("dd/MM/yyyy");
+            this.fecha = fechaActual.ToString("dd'/'MM'/'yyyy");
         }
         //Getters y Setters
         public static int IdContador { get => idContador; set => idContador = value; }

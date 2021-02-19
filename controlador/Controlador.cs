@@ -289,6 +289,16 @@ namespace controlador
         {
             return stack.Preguntas[indice];
         }
+
+        public int GetQuestionReward(int indice)
+        {
+            return stack.Preguntas[indice].Recompensa;
+        }
+
+        public int GetUserReputation()
+        {
+            return stack.UsuarioConectado.Reputacion;
+        }
         public void Answer(Pregunta pregunta,string contenido)
         {
             //Se crea la respuesta
@@ -330,6 +340,23 @@ namespace controlador
                 //Se agrega la etiqueta creada al stack
                 stack.Etiquetas.Add(etiqueta);
                 return true;
+            }
+        }
+      
+        public bool Reward(Pregunta pregunta, int recompensaOfrecida)
+        {
+            //Se verifica que la recompensa ofrecida sea menor o igual a la recompensa del usuario y mayor a cero
+            if(recompensaOfrecida <= stack.UsuarioConectado.Reputacion && recompensaOfrecida > 0)
+            {
+                //Se añade la recompensa a la pregunta
+                pregunta.Recompensa = pregunta.Recompensa + recompensaOfrecida;
+                //Se descuenta la recompensa al usuario
+                stack.UsuarioConectado.Reputacion = stack.UsuarioConectado.Reputacion - recompensaOfrecida;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

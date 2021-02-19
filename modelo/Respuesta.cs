@@ -26,7 +26,7 @@ namespace modelo
             //Para conseguir la fecha:
             //Para conseguir la fecha:
             DateTime fechaActual = DateTime.Now;
-            this.fecha = fechaActual.ToString("dd/MM/yyyy");
+            this.fecha = fechaActual.ToString("dd'/'MM'/'yyyy");
         }
 
         //Getters y setters
