@@ -50,5 +50,12 @@ namespace vista
             ventanaCrearPregunta.Show();
             this.Close();
         }
+
+        private void btn_AceptarRespuesta_Click(object sender, RoutedEventArgs e)
+        {
+            ventanaAccept ventanaAccept = new ventanaAccept();
+            ventanaAccept.Show();
+            this.Close();
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace controlador
         //Metodos
         public static Controlador Instancia
         {
-            get 
+            get
             {
                 if (instancia == null)
                 {
@@ -32,7 +32,7 @@ namespace controlador
                 }
                 return instancia;
             }
-       
+
         }
 
         public bool StackInicialLleno { get => stackInicialLleno; set => stackInicialLleno = value; }
@@ -40,7 +40,7 @@ namespace controlador
         public void llenarStackInicial()
         {
             //Etiquetas
-            if(StackInicialLleno == false)
+            if (StackInicialLleno == false)
             {
                 Etiqueta etiqueta1 = new Etiqueta("Python", "python es un lenguaje interpretado, multiparadigma que busca favorecer un codigo legible");
                 List<Etiqueta> listaEtiqueta1 = new List<Etiqueta>();
@@ -187,13 +187,13 @@ namespace controlador
 
                 stackInicialLleno = true;
             }
-            
+
         }
 
         public bool Register(string username, string password)
         {
             //Se verifica en primer lugar que no exista el usuario:
-            if(stack.Usuarios.Any(i=>i.Username == username)){
+            if (stack.Usuarios.Any(i => i.Username == username)) {
                 //Se encontro un usuario que ya tiene el mismo nombre de usuario
                 return false;
             } else
@@ -202,13 +202,13 @@ namespace controlador
                 stack.Usuarios.Add(nuevoUsuario);
                 return true;
             }
-           
+
         }
 
         public bool Login(string username, string password)
         {
             //Se verifica la existencia del usuario en el stack
-            if(stack.Usuarios.Any(i=>i.Username == username && i.Password == password))
+            if (stack.Usuarios.Any(i => i.Username == username && i.Password == password))
             {
                 //Si se encontro al usuario y su contraseña corresponde se establece como usuario conectado
                 stack.UsuarioConectado = stack.Usuarios.Find(i => i.Username == username);
@@ -222,7 +222,7 @@ namespace controlador
 
         public string getLoggedUsername()
         {
-            if(stack.Conectado == true)
+            if (stack.Conectado == true)
             {
                 return stack.UsuarioConectado.Username;
             }
@@ -259,7 +259,7 @@ namespace controlador
         {
             return stack.Preguntas[indice].Respuestas;
         }
-        
+
         public string getQuestionFecha(int indice)
         {
             return stack.Preguntas[indice].Fecha;
@@ -269,7 +269,7 @@ namespace controlador
         {
             return stack.Preguntas[indice].Votos;
         }
-        
+
         public string GetQuestionStatus(int indice)
         {
             return stack.Preguntas[indice].Estado;
@@ -299,7 +299,7 @@ namespace controlador
         {
             return stack.UsuarioConectado.Reputacion;
         }
-        public void Answer(Pregunta pregunta,string contenido)
+        public void Answer(Pregunta pregunta, string contenido)
         {
             //Se crea la respuesta
             Respuesta respuesta = new Respuesta(contenido);
@@ -324,12 +324,14 @@ namespace controlador
             pregunta.Autor = stack.UsuarioConectado;
             //Se agrega la pregunta al stack
             stack.Preguntas.Add(pregunta);
+            //Se agrega la pregunta al usuario que la hizo
+            stack.UsuarioConectado.PreguntasRealizadas.Add(pregunta);
         }
 
         public bool CrearEtiqueta(string nombre, string descripcion)
         {
             //Se verifica que no exista una etiqueta con el mismo nombre
-            if(stack.Etiquetas.Any(i => i.NombreEtiqueta == nombre)){
+            if (stack.Etiquetas.Any(i => i.NombreEtiqueta == nombre)) {
                 //Se encontro una etiqueta con el mismo nombre
                 return false;
             }
@@ -342,11 +344,11 @@ namespace controlador
                 return true;
             }
         }
-      
+
         public bool Reward(Pregunta pregunta, int recompensaOfrecida)
         {
             //Se verifica que la recompensa ofrecida sea menor o igual a la recompensa del usuario y mayor a cero
-            if(recompensaOfrecida <= stack.UsuarioConectado.Reputacion && recompensaOfrecida > 0)
+            if (recompensaOfrecida <= stack.UsuarioConectado.Reputacion && recompensaOfrecida > 0)
             {
                 //Se añade la recompensa a la pregunta
                 pregunta.Recompensa = pregunta.Recompensa + recompensaOfrecida;
@@ -358,6 +360,11 @@ namespace controlador
             {
                 return false;
             }
+        }
+
+        public List<Pregunta> GetPreguntasByConnectedUser()
+        {
+            return stack.UsuarioConectado.PreguntasRealizadas;
         }
     }
 }

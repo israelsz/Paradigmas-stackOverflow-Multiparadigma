@@ -5,10 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF176414">
-        <Button x:Name="botonRegister" Content="Registrarse" HorizontalAlignment="Left" Height="62" Margin="282,0,0,0" VerticalAlignment="Center" Width="197" Background="White" BorderBrush="White" Foreground="Black" Click="botonRegister_Click"/>
-        <Button x:Name="botonLogin" Content="Conectarse a su cuenta&#xD;&#xA;" HorizontalAlignment="Left" Height="56" Margin="284,282,0,0" VerticalAlignment="Top" Width="197" Background="White" Click="botonLogin_Click"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,109,0,0" Text="Sistema de Foro" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="192" FontSize="20" FontWeight="Bold" Foreground="White"/>
+        Title="MainWindow" Height="450" Width="453">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7B16C1" Offset="0.11"/>
+                <GradientStop Color="#FF0A36FB" Offset="0.76"/>
+                <GradientStop Color="#FF9AA7DA" Offset="0.97"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="botonRegister" Content="Registrarse" HorizontalAlignment="Center" Height="62" VerticalAlignment="Top" Width="197" Background="#FF7400FF" BorderBrush="Black" Foreground="White" Click="botonRegister_Click" FontSize="24" FontWeight="Bold" Margin="0,198,0,0" BorderThickness="4,4,4,4" FontStyle="Italic" FontStretch="Normal" FontFamily="Times New Roman"/>
+        <Button x:Name="botonLogin" Content="Conectarse a su cuenta" HorizontalAlignment="Center" Height="48" Margin="0,316,0,0" VerticalAlignment="Top" Width="197" Background="#FF7400FF" Click="botonLogin_Click" FontWeight="Bold" FontSize="18" BorderBrush="Black" Foreground="White" FontFamily="Times New Roman" FontStyle="Italic" BorderThickness="4,4,4,4"/>
+        <Rectangle HorizontalAlignment="Center" Height="101" Margin="0,45,0,0" Stroke="Black" VerticalAlignment="Top" Width="362" Fill="White" StrokeThickness="4" StrokeDashCap="Flat" Stretch="Fill"/>
+        <Image HorizontalAlignment="Center" Height="66" Margin="0,65,0,0" VerticalAlignment="Top" Width="304" Source="/logo-stackoverflow.png"/>
     </Grid>
 </Window>

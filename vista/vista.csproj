@@ -7,7 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="logo-stackoverflow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\controlador\controlador.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo-stackoverflow.png" />
   </ItemGroup>
 
 </Project>
