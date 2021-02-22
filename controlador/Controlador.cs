@@ -299,6 +299,11 @@ namespace controlador
         {
             return stack.UsuarioConectado.Reputacion;
         }
+
+        public string GetAnswerAutor(Respuesta respuesta)
+        {
+            return respuesta.Autor.Username;
+        }
         public void Answer(Pregunta pregunta, string contenido)
         {
             //Se crea la respuesta
@@ -384,6 +389,50 @@ namespace controlador
             //Se le otorgaran los 2 de recompensa al usuario que acepto la respuesta
             stack.UsuarioConectado.Reputacion = stack.UsuarioConectado.Reputacion + 2;
             return true;
+        }
+
+        //Vote para preguntas
+        public void Vote(Pregunta pregunta, bool voto)
+        {
+            //Si el voto es positivo
+            if (voto)
+            {
+                //Se suma el voto
+                pregunta.Votos = pregunta.Votos + 1;
+                //Se agregan 10 puntos a favor para la persona cuya pregunta fue votada a favor
+                pregunta.Autor.Reputacion = pregunta.Autor.Reputacion + 10;
+            }
+            //Si el voto es negativo
+            else
+            {
+                //Se resta el voto
+                pregunta.Votos = pregunta.Votos - 1;
+                //Se quitan 2 puntos de reputacion para la persona cuya pregunta fue votada en contra
+                pregunta.Autor.Reputacion = pregunta.Autor.Reputacion - 2;
+            }
+        }
+
+        //Vote para respuestas
+        public void Vote(Respuesta respuesta, bool voto)
+        {
+            //Si el voto es positivo
+            if (voto)
+            {
+                //Se suma el voto
+                respuesta.Votos = respuesta.Votos + 1;
+                //Se agregan 10 puntos a favor para la persona cuya respuesta fue votada a favor
+                respuesta.Autor.Reputacion = respuesta.Autor.Reputacion + 10;
+            }
+            //Si el voto es negativo
+            else
+            {
+                //Se resta el voto
+                respuesta.Votos = respuesta.Votos - 1;
+                //Se quitan 2 puntos de reputacion para la persona cuya pregunta fue votada en contra
+                respuesta.Autor.Reputacion = respuesta.Autor.Reputacion - 2;
+                //Se resta 1 punto al usuario que voto en contra de otra respuesta
+                stack.UsuarioConectado.Reputacion = stack.UsuarioConectado.Reputacion - 1;
+            }
         }
     }
 }

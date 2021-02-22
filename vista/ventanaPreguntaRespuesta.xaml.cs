@@ -41,11 +41,19 @@ namespace vista
             lb_Etiquetas.ItemsSource = controlador.GetQuestionLabels(Indice);
             lb_Respuestas.ItemsSource = controlador.GetRespuestas(Indice);
             tb_Recompensa.Text = "Recompensa: " + controlador.GetQuestionReward(Indice);
+
             //Se verifica si el autor de la pregunta es la misma persona conectada en este momento
             if (controlador.GetQuestionAutor(Indice) != controlador.getLoggedUsername())
             {
                 //En caso de que la pregunta no pertenece a la persona conectada, se deshabilitara la opcion de Accept
                 btn_AceptarRespuesta.IsEnabled = false;
+            }
+
+            //Si el autor de la pregunta es la misma persona conectada en este momento
+            if (controlador.GetQuestionAutor(Indice) == controlador.getLoggedUsername())
+            {
+                //Se desactivara la opcion de poder votar por su propia pregunta
+                btn_VotePregunta.IsEnabled = false;
             }
         }
 
@@ -92,6 +100,38 @@ namespace vista
                 {
                     MessageBox.Show("La pregunta ya se encuentra cerrada\nNo es posible aceptar otra respuesta");
                 }
+            }
+        }
+
+        private void btn_VotePregunta_Click(object sender, RoutedEventArgs e)
+        {
+            ventanaVote ventanaVote = new ventanaVote("pregunta", this);
+            ventanaVote.Show();
+        }
+
+        private void btn_VoteRespuesta_Click(object sender, RoutedEventArgs e)
+        {
+            if(lb_Respuestas.SelectedItem == null)
+            {
+                MessageBox.Show("Debe elegir una respuesta antes de poder votar");
+            }
+            else
+            {
+                ventanaVote ventanaVote = new ventanaVote("respuesta", this);
+                ventanaVote.Show();
+            }
+        }
+
+        private void lb_Respuestas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string autorRespuesta = controlador.GetAnswerAutor((modelo.Respuesta)lb_Respuestas.SelectedItem);
+            //En caso que la respuesta seleccionada pertenezca al usuario conectado actualmente
+            if(autorRespuesta == controlador.getLoggedUsername())
+            {
+                btn_VoteRespuesta.IsEnabled = false;
+            } else
+            {
+                btn_VoteRespuesta.IsEnabled = true;
             }
         }
     }
