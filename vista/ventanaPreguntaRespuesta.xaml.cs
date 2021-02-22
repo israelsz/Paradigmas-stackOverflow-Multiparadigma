@@ -41,6 +41,12 @@ namespace vista
             lb_Etiquetas.ItemsSource = controlador.GetQuestionLabels(Indice);
             lb_Respuestas.ItemsSource = controlador.GetRespuestas(Indice);
             tb_Recompensa.Text = "Recompensa: " + controlador.GetQuestionReward(Indice);
+            //Se verifica si el autor de la pregunta es la misma persona conectada en este momento
+            if (controlador.GetQuestionAutor(Indice) != controlador.getLoggedUsername())
+            {
+                //En caso de que la pregunta no pertenece a la persona conectada, se deshabilitara la opcion de Accept
+                btn_AceptarRespuesta.IsEnabled = false;
+            }
         }
 
         private void btn_Cerrar_Click(object sender, RoutedEventArgs e)
@@ -66,6 +72,26 @@ namespace vista
             else
             {
                 MessageBox.Show("No puede ofrecer una recompensa a una pregunta cerrada");
+            }
+        }
+
+        private void btn_AceptarRespuesta_Click(object sender, RoutedEventArgs e)
+        {
+            if (lb_Respuestas.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar una respuesta para ser aceptada");
+            }
+            else
+            {
+                if(controlador.Accept(controlador.GetQuestionbyIndex(Indice), (modelo.Respuesta)lb_Respuestas.SelectedItem))
+                {
+                    LlenarInformacionPregunta();
+                    MessageBox.Show("Respuesta aceptada");
+                }
+                else
+                {
+                    MessageBox.Show("La pregunta ya se encuentra cerrada\nNo es posible aceptar otra respuesta");
+                }
             }
         }
     }

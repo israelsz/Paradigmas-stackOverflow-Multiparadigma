@@ -366,5 +366,24 @@ namespace controlador
         {
             return stack.UsuarioConectado.PreguntasRealizadas;
         }
+
+        public bool Accept(Pregunta pregunta,Respuesta respuesta)
+        {
+            //Se verifica si la pregunta ya se encuentra aceptada
+            if(pregunta.Estado != "abierta")
+            {
+                return false;
+            }
+            //En primer lugar se cambian los estados tanto de la pregunta como la respuesta
+            pregunta.Estado = "Cerrada";
+            respuesta.Estado = "Aceptada";
+            //Se fija la nueva reputacion, la cual es la reputacion actual del usuario + la recompensa por la pregunta + 15 por haber sido su respuesta aceptada
+            respuesta.Autor.Reputacion = respuesta.Autor.Reputacion + pregunta.Recompensa + 15;
+            //Se reinicia la recompensa de la pregunta
+            pregunta.Recompensa = 0;
+            //Se le otorgaran los 2 de recompensa al usuario que acepto la respuesta
+            stack.UsuarioConectado.Reputacion = stack.UsuarioConectado.Reputacion + 2;
+            return true;
+        }
     }
 }

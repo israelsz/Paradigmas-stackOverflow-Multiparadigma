@@ -38,7 +38,6 @@ namespace vista
         private void ListBox_Preguntas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int indice = ListBox_Preguntas.Items.IndexOf(ListBox_Preguntas.SelectedItem);
-            //MessageBox.Show("Indice de lo seleccionado = " + indice);
             ventanaPreguntaRespuesta ventanaPreguntaRespuesta = new ventanaPreguntaRespuesta(indice);
             ventanaPreguntaRespuesta.Show();
             this.Close();
@@ -51,11 +50,5 @@ namespace vista
             this.Close();
         }
 
-        private void btn_AceptarRespuesta_Click(object sender, RoutedEventArgs e)
-        {
-            ventanaAccept ventanaAccept = new ventanaAccept();
-            ventanaAccept.Show();
-            this.Close();
-        }
     }
 }

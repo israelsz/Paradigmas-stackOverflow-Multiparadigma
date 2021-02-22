@@ -41,11 +41,12 @@
         <TextBlock x:Name="tb_Autor" HorizontalAlignment="Left" Height="21" Margin="596,52,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
         <TextBlock x:Name="tb_Id" HorizontalAlignment="Left" Height="23" Margin="171,10,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
         <Button x:Name="btn_Cerrar" Content="Cerrar" HorizontalAlignment="Left" Height="36" Margin="26,447,0,0" VerticalAlignment="Top" Width="124" Background="White" FontWeight="Bold" FontSize="14" Click="btn_Cerrar_Click"/>
-        <Button x:Name="btn_AgregarRespuesta" Content="Agregar Respuesta" HorizontalAlignment="Left" Height="36" Margin="197,448,0,0" VerticalAlignment="Top" Width="183" Background="White" Click="btn_AgregarRespuesta_Click"/>
-        <Button x:Name="btn_DarRecompensa" Content="Ofrecer Recompensa" HorizontalAlignment="Left" Height="36" Margin="448,448,0,0" VerticalAlignment="Top" Width="173" Background="White" Click="btn_DarRecompensa_Click"/>
+        <Button x:Name="btn_AgregarRespuesta" Content="Agregar Respuesta" HorizontalAlignment="Left" Height="36" Margin="197,448,0,0" VerticalAlignment="Top" Width="183" Background="White" Click="btn_AgregarRespuesta_Click" FontWeight="Bold"/>
+        <Button x:Name="btn_DarRecompensa" Content="Ofrecer Recompensa" HorizontalAlignment="Left" Height="36" Margin="448,448,0,0" VerticalAlignment="Top" Width="173" Background="White" Click="btn_DarRecompensa_Click" FontWeight="Bold"/>
         <Button x:Name="btn_VotarPositivamente" Content="Votar Positivamente" HorizontalAlignment="Left" Height="29" Margin="62,183,0,0" VerticalAlignment="Top" Width="122" Background="#FF58E239"/>
         <Button x:Name="btn_VotarNegativamente" Content="Votar Negativamente" HorizontalAlignment="Left" Height="29" Margin="219,183,0,0" VerticalAlignment="Top" Width="122" Background="#FFEC4C1D"/>
         <TextBlock x:Name="tb_Recompensa" HorizontalAlignment="Left" Height="21" Margin="290,52,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="btn_AceptarRespuesta" Content="Aceptar Respuesta" HorizontalAlignment="Left" Height="36" Margin="672,448,0,0" VerticalAlignment="Top" Width="124" Background="White" FontWeight="Bold" Click="btn_AceptarRespuesta_Click"/>
 
     </Grid>
 </Window>
