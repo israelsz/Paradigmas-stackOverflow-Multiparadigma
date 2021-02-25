@@ -6,21 +6,19 @@
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
         Title="Window1" Height="497" Width="993">
-    <Grid Background="#FF551C99">
-        <Grid HorizontalAlignment="Center" Height="113" Margin="0,99,0,0" VerticalAlignment="Top" Width="993" Background="#FFC1BB3B">
+    <Grid Background="#FFCBCBCB">
+        <Grid HorizontalAlignment="Center" Height="95" Margin="0,99,0,0" VerticalAlignment="Top" Width="993" Background="#FF5E7DE8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle HorizontalAlignment="Left" Height="113" Stroke="Black" VerticalAlignment="Top" Width="993" StrokeThickness="4" Grid.ColumnSpan="5"/>
-            <TextBlock HorizontalAlignment="Center" Height="73" Margin="0,22,0,0" Text="Titulo" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Foreground="Black"/>
-            <TextBlock HorizontalAlignment="Center" Height="73" Margin="0,22,0,0" Text="Usuario" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Grid.Column="1" Foreground="Black"/>
-            <TextBlock HorizontalAlignment="Center" Height="73" Margin="0,22,0,0" Text="N° Respuestas" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Grid.Column="2" Foreground="Black"/>
-            <TextBlock HorizontalAlignment="Center" Height="73" Margin="0,22,0,0" Text="Fecha" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Grid.Column="3" Foreground="Black"/>
-            <TextBlock HorizontalAlignment="Center" Height="73" Margin="0,22,0,0" Text="Estado" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Grid.Column="4" Foreground="Black"/>
+            <Rectangle HorizontalAlignment="Left" Height="95" Stroke="Black" VerticalAlignment="Top" Width="993" StrokeThickness="4" Grid.ColumnSpan="4"/>
+            <TextBlock HorizontalAlignment="Center" Height="52" Margin="0,22,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Foreground="Black"/>
+            <TextBlock HorizontalAlignment="Center" Height="52" Margin="0,22,0,0" Text="N° Preguntas" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Grid.Column="1" Foreground="Black"/>
+            <TextBlock HorizontalAlignment="Center" Height="52" Margin="0,22,0,0" Text="N° Respuestas" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Grid.Column="2" Foreground="Black"/>
+            <TextBlock HorizontalAlignment="Center" Height="52" Margin="0,22,0,0" Text="Reputación" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" FontWeight="Bold" FontSize="16" FontFamily="Times New Roman" TextAlignment="Center" Grid.Column="3" Foreground="Black"/>
         </Grid>
 
     </Grid>

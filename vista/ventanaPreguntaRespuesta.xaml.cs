@@ -24,6 +24,7 @@ namespace vista
         {
             InitializeComponent();
             this.indice = indice;
+            VerificarInvitado();
             LlenarInformacionPregunta();
         }
 
@@ -54,6 +55,18 @@ namespace vista
             {
                 //Se desactivara la opcion de poder votar por su propia pregunta
                 btn_VotePregunta.IsEnabled = false;
+            }
+        }
+
+        public void VerificarInvitado()
+        {
+            if(controlador.IsUserConnected() == false)
+            {
+                btn_VotePregunta.IsEnabled = false;
+                btn_AgregarRespuesta.IsEnabled = false;
+                btn_AceptarRespuesta.IsEnabled = false;
+                btn_DarRecompensa.IsEnabled = false;
+                btn_VoteRespuesta.IsEnabled = false;
             }
         }
 
@@ -126,7 +139,7 @@ namespace vista
         {
             string autorRespuesta = controlador.GetAnswerAutor((modelo.Respuesta)lb_Respuestas.SelectedItem);
             //En caso que la respuesta seleccionada pertenezca al usuario conectado actualmente
-            if(autorRespuesta == controlador.getLoggedUsername())
+            if(autorRespuesta == controlador.getLoggedUsername() || controlador.IsUserConnected() == false)
             {
                 btn_VoteRespuesta.IsEnabled = false;
             } else

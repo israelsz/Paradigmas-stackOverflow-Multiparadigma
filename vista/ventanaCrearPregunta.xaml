@@ -5,38 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="ventanaCrearPregunta" Height="450" Width="921">
-    <Grid Background="#FFCDCD57">
-        <Label Content="Ingrese el titulo de su pregunta:" HorizontalAlignment="Left" Height="29" Margin="36,28,0,0" VerticalAlignment="Top" Width="235" FontWeight="Bold" FontSize="14"/>
-        <TextBox x:Name="tb_Titulo" HorizontalAlignment="Left" Height="28" Margin="36,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444"/>
-        <Label Content="Ingrese el contenido de su pregunta:" HorizontalAlignment="Left" Height="30" Margin="36,108,0,0" VerticalAlignment="Top" Width="235" FontWeight="Bold"/>
-        <TextBox x:Name="tb_Contenido" HorizontalAlignment="Left" Height="48" Margin="36,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="575"/>
-        <Label Content="Seleccione las etiquetas para su pregunta" HorizontalAlignment="Left" Height="32" Margin="36,217,0,0" VerticalAlignment="Top" Width="272" FontWeight="Bold"/>
-        <ComboBox x:Name="cb_SeleccionEtiquetas" HorizontalAlignment="Left" Height="28" Margin="36,254,0,0" VerticalAlignment="Top" Width="222">
+        Title="ventanaCrearPregunta" Height="550" Width="1344" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFCA86F9" Offset="0.11"/>
+                <GradientStop Color="#FF6682FF" Offset="0.76"/>
+                <GradientStop Color="#FFB8C2E8" Offset="0.97"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Left" Height="181" Margin="957,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="336" Fill="White" StrokeThickness="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="199" Margin="441,249,0,0" Stroke="Black" VerticalAlignment="Top" Width="427" Fill="White" StrokeThickness="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="113" Margin="18,249,0,0" Stroke="Black" VerticalAlignment="Top" Width="418" Fill="White" StrokeThickness="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="127" Margin="14,106,0,0" Stroke="Black" VerticalAlignment="Top" Width="611" Fill="White" StrokeThickness="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="91" Margin="14,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="475" Fill="White" StrokeThickness="2"/>
+        <Label Content="Ingrese el título de su pregunta:" HorizontalAlignment="Left" Height="38" Margin="107,19,0,0" VerticalAlignment="Top" Width="290" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" BorderBrush="White" FontFamily="Arial"/>
+        <TextBox x:Name="tb_Titulo" HorizontalAlignment="Left" Height="28" Margin="30,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444" FontFamily="Arial" FontSize="14" Background="#FFE4E1E4" BorderBrush="Black" BorderThickness="2,2,2,2"/>
+        <TextBox x:Name="tb_Contenido" HorizontalAlignment="Left" Height="55" Margin="36,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="575" BorderBrush="Black" Background="#FFE4E1E4" FontFamily="Arial" FontSize="14" BorderThickness="2,2,2,2"/>
+        <ComboBox x:Name="cb_SeleccionEtiquetas" HorizontalAlignment="Left" Height="36" Margin="107,304,0,0" VerticalAlignment="Top" Width="265" BorderBrush="Black">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FFE4E1E4" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding NombreEtiqueta}"/>
+                        <TextBlock Text="{Binding NombreEtiqueta}" FontFamily="Arial" FontSize="14"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBlock x:Name="tb_DescripcionEtiqueta" HorizontalAlignment="Left" Height="83" Margin="325,248,0,0" Text="{Binding UpdateSourceTrigger=PropertyChanged,
-                          ElementName=cb_SeleccionEtiquetas,
-                          Mode=TwoWay,Path=SelectedItem.DescripcionEtiqueta}" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
-        <Label Content="Descripción de la etiqueta" HorizontalAlignment="Left" Height="32" Margin="346,217,0,0" VerticalAlignment="Top" Width="172" FontWeight="Bold"/>
-        <ListBox x:Name="lb_EtiquetasSeleccionadas" HorizontalAlignment="Left" Height="90" Margin="636,241,0,0" VerticalAlignment="Top" Width="259">
+        <TextBlock x:Name="tb_DescripcionEtiqueta" HorizontalAlignment="Center" Height="116" Margin="0,315,0,0" Text="{Binding SelectedItem.DescripcionEtiqueta, ElementName=cb_SeleccionEtiquetas, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" Background="#FFE4E1E4" FontFamily="Arial" FontSize="16" TextAlignment="Center" Padding="0,5,0,0"/>
+        <ListBox x:Name="lb_EtiquetasSeleccionadas" HorizontalAlignment="Left" Height="90" Margin="1014,321,0,0" VerticalAlignment="Top" Width="258" Background="#FFE4E1E4" BorderThickness="2,2,2,2" BorderBrush="Black" Padding="0,0,0,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding NombreEtiqueta}"/>
+                    <TextBlock Text="{Binding NombreEtiqueta}" FontFamily="Arial" FontSize="14"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Label Content="Etiquetas seleccionadas" HorizontalAlignment="Left" Height="29" Margin="660,207,0,0" VerticalAlignment="Top" Width="178" FontWeight="Bold"/>
-        <Button x:Name="btn_CrearEtiqueta" Content="Crear nueva etiqueta" HorizontalAlignment="Left" Height="46" Margin="36,330,0,0" VerticalAlignment="Top" Width="147" FontWeight="Bold" Background="#FFFDFDFD" Click="btn_CrearEtiqueta_Click"/>
-        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="47" Margin="745,14,0,0" VerticalAlignment="Top" Width="150" Background="#FFFFFEFE" FontWeight="Bold" FontSize="14" Click="btn_Cancelar_Click"/>
-        <Button x:Name="btn_PublicarPregunta" Content="Publicar pregunta" HorizontalAlignment="Left" Height="39" Margin="593,365,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" FontSize="14" Background="#FFFFFEFE" Click="btn_PublicarPregunta_Click"/>
-        <Button x:Name="btn_AgregarEtiqueta" Content="&gt;&gt;" HorizontalAlignment="Left" Height="34" Margin="562,233,0,0" VerticalAlignment="Top" Width="49" Background="White" FontWeight="Bold" FontSize="18" Click="btn_AgregarEtiqueta_Click"/>
-        <Button x:Name="btn_EliminarEtiqueta" Content="&lt;&lt;" HorizontalAlignment="Left" Height="34" Margin="562,297,0,0" VerticalAlignment="Top" Width="49" FontWeight="Bold" FontSize="18" Background="White" Click="btn_EliminarEtiqueta_Click"/>
+        <Button x:Name="btn_CrearEtiqueta" Content="Crear nueva etiqueta" HorizontalAlignment="Left" Height="54" Margin="85,404,0,0" VerticalAlignment="Top" Width="170" FontWeight="Bold" Background="#FFEADEF5" Click="btn_CrearEtiqueta_Click" BorderBrush="Black" FontFamily="Arial" FontSize="16" BorderThickness="3,3,3,3"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="71" Margin="1041,20,0,0" VerticalAlignment="Top" Width="168" Background="#FFEADEF5" FontWeight="Bold" FontSize="20" Click="btn_Cancelar_Click" FontFamily="Arial" Padding="1,1,1,1" BorderThickness="3,3,3,3" BorderBrush="Black"/>
+        <Button x:Name="btn_PublicarPregunta" Content="Publicar pregunta" HorizontalAlignment="Left" Height="47" Margin="1008,454,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold" FontSize="16" Background="#FFEADEF5" Click="btn_PublicarPregunta_Click" BorderBrush="Black" FontFamily="Arial" BorderThickness="3,3,3,3"/>
+        <Button x:Name="btn_AgregarEtiqueta" Content="&gt;&gt;" HorizontalAlignment="Left" Height="34" Margin="888,311,0,0" VerticalAlignment="Top" Width="50" Background="#FFEADEF5" FontWeight="Bold" FontSize="18" Click="btn_AgregarEtiqueta_Click" FontFamily="Arial" BorderThickness="3,3,3,3" BorderBrush="Black"/>
+        <Button x:Name="btn_EliminarEtiqueta" Content="&lt;&lt;" HorizontalAlignment="Left" Height="34" Margin="889,362,0,0" VerticalAlignment="Top" Width="49" FontWeight="Bold" FontSize="18" Background="#FFEADEF5" Click="btn_EliminarEtiqueta_Click" FontFamily="Arial" BorderThickness="3,3,3,3" BorderBrush="Black"/>
+        <Label Content="Ingrese el contenido de su pregunta:" HorizontalAlignment="Left" Height="38" Margin="107,123,0,0" VerticalAlignment="Top" Width="290" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" BorderBrush="White" FontFamily="Arial"/>
+        <Label Content="Seleccione las etiquetas para su pregunta" HorizontalAlignment="Left" Height="38" Margin="85,262,0,0" VerticalAlignment="Top" Width="334" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" FontFamily="Arial"/>
+        <Label Content="Descripción de la etiqueta:" HorizontalAlignment="Left" Height="35" Margin="556,256,0,0" VerticalAlignment="Top" Width="264" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" FontFamily="Arial"/>
+        <Label Content="Etiquetas seleccionadas:" HorizontalAlignment="Left" Height="38" Margin="1050,274,0,0" VerticalAlignment="Top" Width="222" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" FontFamily="Arial"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="36,16,0,0" VerticalAlignment="Top" Width="60" Source="/question.png"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="55,123,0,0" VerticalAlignment="Top" Width="39" Source="/contenido.png"/>
+        <Image HorizontalAlignment="Left" Height="41" Margin="36,262,0,0" VerticalAlignment="Top" Width="49" Source="/etiquetas.png"/>
+        <Rectangle HorizontalAlignment="Center" Height="116" Margin="0,315,0,0" Stroke="Black" VerticalAlignment="Top" Width="346" StrokeThickness="2"/>
+        <Image HorizontalAlignment="Left" Height="61" Margin="454,256,0,0" VerticalAlignment="Top" Width="54" Source="/descripcion.png" RenderTransformOrigin="0.613,0.472"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="990,275,0,0" VerticalAlignment="Top" Width="36" Source="/select.png"/>
     </Grid>
 </Window>

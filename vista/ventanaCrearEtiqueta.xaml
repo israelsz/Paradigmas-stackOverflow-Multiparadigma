@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="ventanaCrearEtiqueta" Height="450" Width="644">
-    <Grid Background="#FFC2D481">
-        <Label Content="Nombre de la etiqueta" HorizontalAlignment="Center" Height="31" Margin="0,31,0,0" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tb_NombreEtiqueta" HorizontalAlignment="Center" Height="45" Margin="0,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-        <Label Content="Descripción de la etiqueta" HorizontalAlignment="Center" Height="41" Margin="0,156,0,0" VerticalAlignment="Top" Width="230" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tb_DescripcionEtiqueta" HorizontalAlignment="Center" Height="73" Margin="0,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
-        <Button x:Name="btn_CrearEtiqueta" Content="Crear Etiqueta" HorizontalAlignment="Center" Height="46" Margin="0,313,0,0" VerticalAlignment="Top" Width="188" Background="White" FontWeight="Bold" FontSize="14" Click="btn_CrearEtiqueta_Click"/>
-        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="42" Margin="31,369,0,0" VerticalAlignment="Top" Width="130" Background="White" FontWeight="Bold" FontSize="14" Click="btn_Cancelar_Click"/>
+        Title="ventanaCrearEtiqueta" Height="492" Width="644" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFCA86F9" Offset="0.11"/>
+                <GradientStop Color="#FF6682FF" Offset="0.76"/>
+                <GradientStop Color="#FFB8C2E8" Offset="0.97"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Center" Height="163" Margin="0,176,0,0" Stroke="Black" VerticalAlignment="Top" Width="484" Fill="White" StrokeThickness="2"/>
+
+        <Rectangle HorizontalAlignment="Center" Height="118" Margin="0,33,0,0" Stroke="Black" VerticalAlignment="Top" Width="484" Fill="White" StrokeThickness="2"/>
+
+        <Label Content="Nombre de la etiqueta:" HorizontalAlignment="Center" Height="31" Margin="0,48,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="16" FontFamily="Arial"/>
+        <TextBox x:Name="tb_NombreEtiqueta" HorizontalAlignment="Center" Height="45" Margin="0,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344" BorderBrush="Black" FontFamily="Arial" FontSize="14" BorderThickness="2,2,2,2" Background="#FFE4E1E4"/>
+        <Label Content="Descripción de la etiqueta:" HorizontalAlignment="Center" Height="36" Margin="0,197,0,0" VerticalAlignment="Top" Width="230" FontWeight="Bold" FontSize="16" FontFamily="Arial"/>
+        <TextBox x:Name="tb_DescripcionEtiqueta" HorizontalAlignment="Left" Height="78" Margin="126,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Background="#FFE4E1E4" BorderBrush="Black" BorderThickness="2,2,2,2" FontFamily="Arial" FontSize="14"/>
+        <Button x:Name="btn_CrearEtiqueta" Content="Crear Etiqueta" HorizontalAlignment="Center" Height="46" Margin="0,360,0,0" VerticalAlignment="Top" Width="188" Background="#FFEADEF5" FontWeight="Bold" FontSize="18" Click="btn_CrearEtiqueta_Click" BorderThickness="3,3,3,3" BorderBrush="Black" FontFamily="Arial"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="42" Margin="20,389,0,0" VerticalAlignment="Top" Width="130" Background="#FFEADEF5" FontWeight="Bold" FontSize="18" Click="btn_Cancelar_Click" BorderBrush="Black" FontFamily="Arial" BorderThickness="3,3,3,3"/>
+        <Image HorizontalAlignment="Left" Height="43" Margin="169,36,0,0" VerticalAlignment="Top" Width="46" Source="/name.png"/>
+        <Image HorizontalAlignment="Left" Height="52" Margin="138,185,0,0" VerticalAlignment="Top" Width="56" Source="/descripcion.png"/>
 
     </Grid>
 </Window>

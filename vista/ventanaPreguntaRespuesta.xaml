@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="ventanaPreguntaRespuesta" Height="521" Width="820">
-    <Grid Background="#FF7BCBF0" Margin="0,0,-148,0">
+        Title="ventanaPreguntaRespuesta" Height="521" Width="940" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF7BCBF0">
         <ListBox x:Name="lb_Etiquetas" HorizontalAlignment="Center" Height="37" Margin="0,128,0,0" VerticalAlignment="Top" Width="696" Background="#FF7BCBF0">
             <ListBox.ItemTemplate>
                 <DataTemplate>

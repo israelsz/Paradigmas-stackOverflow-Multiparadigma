@@ -220,6 +220,17 @@ namespace controlador
             return false;
         }
 
+        public bool IsUserConnected()
+        {
+            if(stack.Conectado == true)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
+
         public string getLoggedUsername()
         {
             if (stack.Conectado == true)
@@ -303,6 +314,11 @@ namespace controlador
         public string GetAnswerAutor(Respuesta respuesta)
         {
             return respuesta.Autor.Username;
+        }
+
+        public List<Usuario> GetAllUsers()
+        {
+            return stack.Usuarios;
         }
         public void Answer(Pregunta pregunta, string contenido)
         {

@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="contenido.png" />
+    <None Remove="descripcion.png" />
+    <None Remove="etiquetas.png" />
+    <None Remove="Lock.png" />
     <None Remove="logo-stackoverflow.png" />
+    <None Remove="name.png" />
+    <None Remove="person-square.png" />
+    <None Remove="question.png" />
+    <None Remove="select.png" />
+    <None Remove="UserIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +28,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="contenido.png" />
+    <Resource Include="descripcion.png" />
+    <Resource Include="etiquetas.png" />
+    <Resource Include="Lock.png" />
     <Resource Include="logo-stackoverflow.png" />
+    <Resource Include="name.png" />
+    <Resource Include="person-square.png" />
+    <Resource Include="question.png" />
+    <Resource Include="select.png" />
+    <Resource Include="UserIcon.png" />
   </ItemGroup>
 
 </Project>

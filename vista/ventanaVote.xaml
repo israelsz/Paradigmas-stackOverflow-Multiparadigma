@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="ventanaVote" Height="381" Width="406">
+        Title="ventanaVote" Height="381" Width="406" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFBDC972">
         <TextBlock x:Name="tb_TextoVoto" HorizontalAlignment="Center" Height="31" Margin="0,93,0,0" Text="Voto" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" FontWeight="Bold" FontSize="18"/>
         <Button x:Name="btn_VotarPositivo" Content="Votar Positivamente" HorizontalAlignment="Left" Height="66" Margin="26,180,0,0" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontFamily="Times New Roman" FontSize="16" Background="#FF22A853" Padding="4,4,4,4" UseLayoutRounding="True" BorderBrush="Black" Click="btn_VotarPositivo_Click"/>

@@ -23,8 +23,28 @@ namespace vista
         public ventanaPrincipal()
         {
             InitializeComponent();
-            TextBlock_InfoUsuario.Text = "Conectado como: " + controlador.getLoggedUsername();
+            FijarUsernameConectado();
+            VerificarInvitado();
             ListBox_Preguntas.ItemsSource = controlador.GetPreguntas();
+        }
+
+        public void VerificarInvitado()
+        {
+            if(controlador.IsUserConnected() == false)
+            {
+                btn_HacerPregunta.IsEnabled = false;
+            }
+        }
+
+        public void FijarUsernameConectado()
+        {
+            if(controlador.IsUserConnected() == true)
+            {
+                TextBlock_InfoUsuario.Text = "Conectado como: " + controlador.getLoggedUsername();
+            } else
+            {
+                TextBlock_InfoUsuario.Text = "Conectado como invitado";
+            }
         }
 
         private void Button_Logout_Click(object sender, RoutedEventArgs e)
@@ -50,5 +70,11 @@ namespace vista
             this.Close();
         }
 
+        private void btn_VerUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+            ventanaInfoUsuarios ventanaInfoUsuarios = new ventanaInfoUsuarios();
+            ventanaInfoUsuarios.Show();
+            this.Close();
+        }
     }
 }
