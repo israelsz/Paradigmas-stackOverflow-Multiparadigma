@@ -41,7 +41,7 @@ namespace vista
             tb_Id.Text = "Id: " + controlador.GetQuestionId(Indice);
             lb_Etiquetas.ItemsSource = controlador.GetQuestionLabels(Indice);
             lb_Respuestas.ItemsSource = controlador.GetRespuestas(Indice);
-            tb_Recompensa.Text = "Recompensa: " + controlador.GetQuestionReward(Indice);
+            tb_Recompensa.Text = "Recompensa: " + controlador.GetQuestionReward(Indice) + " puntos";
 
             //Se verifica si el autor de la pregunta es la misma persona conectada en este momento
             if (controlador.GetQuestionAutor(Indice) != controlador.getLoggedUsername())
@@ -108,6 +108,7 @@ namespace vista
                 {
                     LlenarInformacionPregunta();
                     MessageBox.Show("Respuesta aceptada");
+                    lb_Respuestas.Items.Refresh();
                 }
                 else
                 {

@@ -7,6 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\answer.png" />
+    <None Remove="assets\calendar.png" />
+    <None Remove="assets\contenido.png" />
+    <None Remove="assets\descripcion.png" />
+    <None Remove="assets\dislike.png" />
+    <None Remove="assets\etiquetas.png" />
+    <None Remove="assets\id.png" />
+    <None Remove="assets\like.png" />
+    <None Remove="assets\Lock.png" />
+    <None Remove="assets\logo-stackoverflow.png" />
+    <None Remove="assets\name.png" />
+    <None Remove="assets\question.png" />
+    <None Remove="assets\questionmark.png" />
+    <None Remove="assets\recompensa.png" />
+    <None Remove="assets\select.png" />
+    <None Remove="assets\title.png" />
+    <None Remove="assets\UserIcon.png" />
+    <None Remove="assets\votos.png" />
     <None Remove="contenido.png" />
     <None Remove="descripcion.png" />
     <None Remove="etiquetas.png" />
@@ -16,6 +34,7 @@
     <None Remove="person-square.png" />
     <None Remove="question.png" />
     <None Remove="select.png" />
+    <None Remove="title.png" />
     <None Remove="UserIcon.png" />
   </ItemGroup>
 
@@ -24,20 +43,60 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="assets\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="contenido.png" />
-    <Resource Include="descripcion.png" />
-    <Resource Include="etiquetas.png" />
-    <Resource Include="Lock.png" />
-    <Resource Include="logo-stackoverflow.png" />
-    <Resource Include="name.png" />
-    <Resource Include="person-square.png" />
-    <Resource Include="question.png" />
-    <Resource Include="select.png" />
-    <Resource Include="UserIcon.png" />
+    <Resource Include="assets\answer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\calendar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\contenido.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\descripcion.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\dislike.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\etiquetas.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\id.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\like.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\Lock.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\logo-stackoverflow.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\name.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\question.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\questionmark.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\recompensa.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\select.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\title.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\UserIcon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\votos.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

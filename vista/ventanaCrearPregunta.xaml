@@ -54,11 +54,11 @@
         <Label Content="Seleccione las etiquetas para su pregunta" HorizontalAlignment="Left" Height="38" Margin="85,262,0,0" VerticalAlignment="Top" Width="334" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" FontFamily="Arial"/>
         <Label Content="Descripción de la etiqueta:" HorizontalAlignment="Left" Height="35" Margin="556,256,0,0" VerticalAlignment="Top" Width="264" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" FontFamily="Arial"/>
         <Label Content="Etiquetas seleccionadas:" HorizontalAlignment="Left" Height="38" Margin="1050,274,0,0" VerticalAlignment="Top" Width="222" FontWeight="Bold" FontSize="15" Background="White" BorderThickness="2,2,2,2" FontFamily="Arial"/>
-        <Image HorizontalAlignment="Left" Height="38" Margin="36,16,0,0" VerticalAlignment="Top" Width="60" Source="/question.png"/>
-        <Image HorizontalAlignment="Left" Height="38" Margin="55,123,0,0" VerticalAlignment="Top" Width="39" Source="/contenido.png"/>
-        <Image HorizontalAlignment="Left" Height="41" Margin="36,262,0,0" VerticalAlignment="Top" Width="49" Source="/etiquetas.png"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="36,16,0,0" VerticalAlignment="Top" Width="60" Source="/assets/question.png"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="55,123,0,0" VerticalAlignment="Top" Width="39" Source="/assets/contenido.png"/>
+        <Image HorizontalAlignment="Left" Height="41" Margin="36,262,0,0" VerticalAlignment="Top" Width="49" Source="/assets/etiquetas.png"/>
         <Rectangle HorizontalAlignment="Center" Height="116" Margin="0,315,0,0" Stroke="Black" VerticalAlignment="Top" Width="346" StrokeThickness="2"/>
-        <Image HorizontalAlignment="Left" Height="61" Margin="454,256,0,0" VerticalAlignment="Top" Width="54" Source="/descripcion.png" RenderTransformOrigin="0.613,0.472"/>
-        <Image HorizontalAlignment="Left" Height="38" Margin="990,275,0,0" VerticalAlignment="Top" Width="36" Source="/select.png"/>
+        <Image HorizontalAlignment="Left" Height="61" Margin="454,256,0,0" VerticalAlignment="Top" Width="54" Source="/assets/descripcion.png" RenderTransformOrigin="0.613,0.472"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="990,275,0,0" VerticalAlignment="Top" Width="36" Source="/assets/select.png"/>
     </Grid>
 </Window>

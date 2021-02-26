@@ -5,12 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="ventanaPreguntaRespuesta" Height="521" Width="940" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF7BCBF0">
-        <ListBox x:Name="lb_Etiquetas" HorizontalAlignment="Center" Height="37" Margin="0,128,0,0" VerticalAlignment="Top" Width="696" Background="#FF7BCBF0">
+        Title="ventanaPreguntaRespuesta" Height="727" Width="1155" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFCA86F9" Offset="0.11"/>
+                <GradientStop Color="#FF6682FF" Offset="0.76"/>
+                <GradientStop Color="#FFB8C2E8" Offset="0.97"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Rectangle HorizontalAlignment="Left" Height="275" Margin="32,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="937" StrokeThickness="3" Fill="White"/>
+
+        <ListBox x:Name="lb_Etiquetas" HorizontalAlignment="Left" Height="37" Margin="114,219,0,0" VerticalAlignment="Top" Width="575" Background="#FFE4E1E4" BorderBrush="Black" BorderThickness="3,3,3,3">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding NombreEtiqueta}" Background="#FFD8BB00" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding NombreEtiqueta}" Background="#FFF3FF00" FontWeight="Bold"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
             <ListBox.ItemsPanel>
@@ -19,34 +29,64 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
-        <ListBox x:Name="lb_Respuestas" HorizontalAlignment="Center" Height="225" Margin="0,191,0,0" VerticalAlignment="Top" Width="696" HorizontalContentAlignment="Stretch" SelectionChanged="lb_Respuestas_SelectionChanged">
+        <ListBox x:Name="lb_Respuestas" HorizontalAlignment="Left" Height="254" Margin="71,346,0,0" VerticalAlignment="Top" Width="952" HorizontalContentAlignment="Stretch" SelectionChanged="lb_Respuestas_SelectionChanged" BorderBrush="Black" BorderThickness="3,3,3,3">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="{Binding Contenido}" TextWrapping="Wrap" VerticalAlignment="Top" Height="117" Width="622"/>
-                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="50,146,0,0" Text="{Binding Autor.Username,StringFormat=Autor: {0}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="133"/>
-                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="250,146,0,0" Text="{Binding Fecha,StringFormat=Fecha: {0}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
-                        <TextBlock HorizontalAlignment="Left" Height="25" Margin="475,146,0,0" Text="{Binding Votos,StringFormat=Votos: {0}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"/>
-                        <TextBlock HorizontalAlignment="Left" Height="23" Margin="600,145,0,0" Text="{Binding Id,StringFormat=Id: {0}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
+                    <Grid Margin="0,2,0,0">
+                        <TextBlock HorizontalAlignment="Left" Margin="114,20,0,0" Text="{Binding Contenido}" TextWrapping="Wrap" VerticalAlignment="Top" Height="53" Width="381" FontFamily="Arial" FontSize="16" Background="#FFE4E1E4" Padding="5,5,0,0"/>
+                        <Image HorizontalAlignment="Left" Height="61" Margin="27,12,0,0" VerticalAlignment="Top" Width="61" Source="/assets/answer.png"/>
+                        <Rectangle HorizontalAlignment="Left" Height="53" Margin="114,20,0,0" Stroke="Black" VerticalAlignment="Top" Width="381" StrokeThickness="2"/>
+                        <TextBlock HorizontalAlignment="Left" Height="33" Margin="153,101,0,0" Text="{Binding Autor.Username, StringFormat=Autor: \{0\}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontFamily="Arial" Background="#FFE4E1E4" FontSize="15" Padding="5,5,0,0"/>
+                        <Image HorizontalAlignment="Left" Height="45" Margin="87,95,0,0" VerticalAlignment="Top" Width="47" Source="/assets/UserIcon.png"/>
+                        <Rectangle HorizontalAlignment="Left" Height="33" Margin="153,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="105" StrokeThickness="2"/>
+                        <TextBlock HorizontalAlignment="Left" Height="27" Margin="353,104,0,0" Text="{Binding Fecha, StringFormat=Fecha: \{0\}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" FontFamily="Arial" FontSize="15" Background="#FFE4E1E4" Padding="5,3,0,0"/>
+                        <Image HorizontalAlignment="Left" Height="40" Margin="294,97,0,0" VerticalAlignment="Top" Width="43" Source="/assets/calendar.png"/>
+                        <Rectangle HorizontalAlignment="Left" Height="28" Margin="353,104,0,0" Stroke="Black" VerticalAlignment="Top" Width="142" StrokeThickness="2"/>
+                        <TextBlock HorizontalAlignment="Left" Height="25" Margin="580,106,0,0" Text="{Binding Votos, StringFormat=Votos: \{0\}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Background="#FFE4E1E4" FontFamily="Arial" FontSize="15" Padding="5,3,0,0"/>
+                        <TextBlock HorizontalAlignment="Left" Height="23" Margin="765,108,0,0" Text="{Binding Id, StringFormat=Id: \{0\}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" FontFamily="Arial" FontSize="15" Background="#FFE4E1E4" Padding="5,2,0,0"/>
+                        <Image HorizontalAlignment="Left" Height="40" Margin="525,94,0,0" VerticalAlignment="Top" Width="47" Source="/assets/votos.png"/>
+                        <Rectangle HorizontalAlignment="Left" Height="28" Margin="580,104,0,0" Stroke="Black" VerticalAlignment="Top" Width="108" StrokeThickness="2"/>
+                        <Image HorizontalAlignment="Left" Height="34" Margin="717,102,0,0" VerticalAlignment="Top" Width="38" Source="/assets/id.png"/>
+                        <Rectangle HorizontalAlignment="Left" Height="27" Margin="765,106,0,0" Stroke="Black" VerticalAlignment="Top" Width="76" StrokeThickness="2"/>
+                        <TextBlock HorizontalAlignment="Left" Height="30" Margin="739,42,0,0" Text="{Binding Estado, StringFormat=Estado: \{0\}}" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" FontFamily="Arial" FontSize="15" Background="#FFE4E1E4" Padding="5,5,0,0"/>
+                        <Image HorizontalAlignment="Left" Height="39" Margin="694,36,0,0" VerticalAlignment="Top" Width="44" Source="/assets/questionmark.png"/>
+                        <Rectangle HorizontalAlignment="Left" Height="30" Margin="739,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="137" StrokeThickness="2"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock x:Name="tb_Fecha" HorizontalAlignment="Left" Height="15" Margin="380,17,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
-        <TextBlock x:Name="tb_Votos" HorizontalAlignment="Left" Height="16" Margin="718,20,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
-        <TextBlock x:Name="tb_Titulo" HorizontalAlignment="Left" Height="16" Margin="52,33,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="238"/>
-        <TextBlock x:Name="tb_Contenido" HorizontalAlignment="Center" Height="50" Margin="0,73,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="696"/>
-        <Label Content="Titulo" HorizontalAlignment="Left" Height="25" Margin="52,3,0,0" VerticalAlignment="Top" Width="98" FontWeight="Bold"/>
-        <TextBlock x:Name="tb_Estado" HorizontalAlignment="Left" Height="20" Margin="565,17,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"/>
-        <TextBlock x:Name="tb_Autor" HorizontalAlignment="Left" Height="21" Margin="596,52,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
-        <TextBlock x:Name="tb_Id" HorizontalAlignment="Left" Height="23" Margin="171,10,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
-        <Button x:Name="btn_Cerrar" Content="Cerrar" HorizontalAlignment="Left" Height="36" Margin="26,447,0,0" VerticalAlignment="Top" Width="124" Background="White" FontWeight="Bold" FontSize="14" Click="btn_Cerrar_Click"/>
-        <Button x:Name="btn_AgregarRespuesta" Content="Agregar Respuesta" HorizontalAlignment="Left" Height="36" Margin="197,448,0,0" VerticalAlignment="Top" Width="183" Background="White" Click="btn_AgregarRespuesta_Click" FontWeight="Bold"/>
-        <Button x:Name="btn_DarRecompensa" Content="Ofrecer Recompensa" HorizontalAlignment="Left" Height="36" Margin="405,448,0,0" VerticalAlignment="Top" Width="173" Background="White" Click="btn_DarRecompensa_Click" FontWeight="Bold"/>
-        <TextBlock x:Name="tb_Recompensa" HorizontalAlignment="Left" Height="21" Margin="290,52,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
-        <Button x:Name="btn_AceptarRespuesta" Content="Aceptar Respuesta" HorizontalAlignment="Left" Height="36" Margin="616,448,0,0" VerticalAlignment="Top" Width="124" Background="White" FontWeight="Bold" Click="btn_AceptarRespuesta_Click"/>
-        <Button x:Name="btn_VoteRespuesta" Content="Votar por respuesta" HorizontalAlignment="Left" Height="36" Margin="781,448,0,0" VerticalAlignment="Top" Width="126" FontWeight="Bold" Background="White" Click="btn_VoteRespuesta_Click"/>
-        <Button x:Name="btn_VotePregunta" Content="Votar por pregunta" HorizontalAlignment="Left" Height="36" Margin="781,63,0,0" VerticalAlignment="Top" Width="126" Background="White" FontWeight="Bold" Click="btn_VotePregunta_Click"/>
+        <TextBlock x:Name="tb_Fecha" HorizontalAlignment="Left" Height="30" Margin="314,91,0,0" Text="Fecha" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Background="#FFE4E1E4" FontFamily="Arial" FontSize="14" Padding="5,5,0,0"/>
+        <TextBlock x:Name="tb_Votos" HorizontalAlignment="Left" Height="25" Margin="800,195,0,0" Text="Votos" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Background="#FFE4E1E4" FontFamily="Arial" FontSize="14" Padding="10,5,0,0"/>
+        <TextBlock x:Name="tb_Titulo" HorizontalAlignment="Left" Height="34" Margin="104,32,0,0" Text="Título" TextWrapping="Wrap" VerticalAlignment="Top" Width="384" Background="#FFE4E1E4" FontFamily="Arial" FontSize="18" FontWeight="Bold" Padding="5,5,0,0" TextAlignment="Left"/>
+        <TextBlock x:Name="tb_Contenido" HorizontalAlignment="Left" Height="50" Margin="114,149,0,0" Text="Contenido" TextWrapping="Wrap" VerticalAlignment="Top" Width="575" Background="#FFE4E1E4" FontFamily="Arial" FontSize="14" Padding="5,5,0,0"/>
+        <TextBlock x:Name="tb_Estado" HorizontalAlignment="Left" Height="28" Margin="581,34,0,0" Text="Estado: cerrado" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" FontFamily="Arial" FontSize="18" FontWeight="Normal" Background="#FFE4E1E4" Padding="10,3,0,0"/>
+        <TextBlock x:Name="tb_Autor" HorizontalAlignment="Left" Height="30" Margin="104,89,0,0" Text="Autor" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" FontFamily="Arial" FontSize="14" Background="#FFE4E1E4" Padding="5,7,0,0"/>
+        <TextBlock x:Name="tb_Id" HorizontalAlignment="Left" Height="22" Margin="837,37,0,0" Text="ID:" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" FontWeight="Bold" FontFamily="Arial" FontSize="14" Padding="10,3,0,0" Background="#FFE4E1E4"/>
+        <Button x:Name="btn_Cerrar" Content="Cerrar" HorizontalAlignment="Left" Height="46" Margin="54,624,0,0" VerticalAlignment="Top" Width="124" Background="#FFE4E1E4" FontWeight="Bold" FontSize="14" Click="btn_Cerrar_Click" FontFamily="Arial" BorderBrush="Black" BorderThickness="3,3,3,3"/>
+        <Button x:Name="btn_AgregarRespuesta" Content="Agregar Respuesta" HorizontalAlignment="Left" Height="42" Margin="227,627,0,0" VerticalAlignment="Top" Width="200" Background="#FFE4E1E4" Click="btn_AgregarRespuesta_Click" FontWeight="Bold" BorderBrush="Black" BorderThickness="3,3,3,3" FontFamily="Arial" FontSize="14"/>
+        <Button x:Name="btn_DarRecompensa" Content="Ofrecer Recompensa" HorizontalAlignment="Left" Height="46" Margin="490,625,0,0" VerticalAlignment="Top" Width="172" Background="#FFE4E1E4" Click="btn_DarRecompensa_Click" FontWeight="Bold" BorderBrush="Black" BorderThickness="3,3,3,3" FontFamily="Arial" FontSize="14"/>
+        <TextBlock x:Name="tb_Recompensa" HorizontalAlignment="Left" Height="28" Margin="780,122,0,0" Text="Recompensa:" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" FontFamily="Arial" FontSize="14" Background="#FFE4E1E4" Padding="10,5,0,0"/>
+        <Button x:Name="btn_AceptarRespuesta" Content="Aceptar Respuesta" HorizontalAlignment="Left" Height="46" Margin="738,625,0,0" VerticalAlignment="Top" Width="147" Background="#FFE4E1E4" FontWeight="Bold" Click="btn_AceptarRespuesta_Click" FontFamily="Arial" FontSize="14" BorderBrush="Black" BorderThickness="3,3,3,3"/>
+        <Button x:Name="btn_VoteRespuesta" Content="Votar por respuesta" HorizontalAlignment="Left" Height="44" Margin="946,626,0,0" VerticalAlignment="Top" Width="154" FontWeight="Bold" Background="#FFE4E1E4" Click="btn_VoteRespuesta_Click" BorderBrush="Black" Padding="0,0,0,0" FontFamily="Arial" FontSize="14" BorderThickness="3,3,3,3"/>
+        <Button x:Name="btn_VotePregunta" Content="Votar por pregunta" HorizontalAlignment="Left" Height="49" Margin="984,183,0,0" VerticalAlignment="Top" Width="146" Background="#FFE4E1E4" FontWeight="Bold" Click="btn_VotePregunta_Click" BorderBrush="Black" FontFamily="Arial" FontSize="14" BorderThickness="3,3,3,3"/>
+        <Rectangle HorizontalAlignment="Left" Height="36" Margin="104,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="384" StrokeThickness="3"/>
+        <Image HorizontalAlignment="Left" Height="42" Margin="52,27,0,0" VerticalAlignment="Top" Width="44" Source="/assets/title.png"/>
+        <Image HorizontalAlignment="Left" Height="39" Margin="257,83,0,0" VerticalAlignment="Top" Width="54" Source="/assets/calendar.png"/>
+        <Image HorizontalAlignment="Left" Height="44" Margin="50,80,0,0" VerticalAlignment="Top" Width="44" Source="/assets/UserIcon.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="32" Margin="104,88,0,0" Stroke="Black" VerticalAlignment="Top" Width="119" StrokeThickness="3"/>
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="314,91,0,0" Stroke="Black" VerticalAlignment="Top" Width="96" StrokeThickness="3"/>
+        <Image HorizontalAlignment="Left" Height="46" Margin="52,151,0,0" VerticalAlignment="Top" Width="55" Source="/assets/contenido.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="51" Margin="114,148,0,0" Stroke="Black" VerticalAlignment="Top" Width="575" StrokeThickness="3"/>
+        <Image HorizontalAlignment="Left" Height="52" Margin="50,212,0,0" VerticalAlignment="Top" Width="50" Source="/assets/etiquetas.png"/>
+        <Image HorizontalAlignment="Left" Height="42" Margin="723,114,0,0" VerticalAlignment="Top" Width="52" Source="/assets/recompensa.png"/>
+        <Image HorizontalAlignment="Left" Height="46" Margin="522,24,0,0" VerticalAlignment="Top" Width="57" Source="/assets/questionmark.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="30" Margin="581,32,0,0" Stroke="Black" VerticalAlignment="Top" Width="163" StrokeThickness="3"/>
+        <Image HorizontalAlignment="Left" Height="41" Margin="780,25,0,0" VerticalAlignment="Top" Width="44" Source="/assets/id.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="28" Margin="837,34,0,0" Stroke="Black" VerticalAlignment="Top" Width="96" StrokeThickness="3"/>
+        <Rectangle HorizontalAlignment="Left" Height="28" Margin="780,122,0,0" Stroke="Black" VerticalAlignment="Top" Width="173" StrokeThickness="3"/>
+        <Image HorizontalAlignment="Left" Height="60" Margin="723,178,0,0" VerticalAlignment="Top" Width="52" Source="/assets/votos.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="25" Margin="800,195,0,0" Stroke="Black" VerticalAlignment="Top" Width="117" StrokeThickness="3"/>
+        <Label Content="Respuestas a la pregunta:" HorizontalAlignment="Left" Height="36" Margin="75,301,0,0" VerticalAlignment="Top" Width="254" BorderBrush="Black" Background="White" FontFamily="Arial" FontWeight="Bold" FontSize="18" BorderThickness="3,3,3,3"/>
 
     </Grid>
 </Window>

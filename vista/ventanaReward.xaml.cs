@@ -38,17 +38,31 @@ namespace vista
         }
         private void btn_OfrecerRecompensa_Click(object sender, RoutedEventArgs e)
         {
-            //Se llama a Reward desde el controlador
-            if (controlador.Reward(controlador.GetQuestionbyIndex(Indice), Convert.ToInt32(tb_Recompensa.Text)))
+
+            //Se convierte a entero el numero ingresado en la textbox
+            int recompensa;
+            if (int.TryParse(tb_Recompensa.Text, out recompensa))
             {
-                MessageBox.Show("Recompensa agregada");
-                ventanaPreguntaRespuesta.LlenarInformacionPregunta();
-                this.Close();
+                //Si la conversión fue exitosa
+                //Se llama a Reward desde el controlador
+                if (controlador.Reward(controlador.GetQuestionbyIndex(Indice), Convert.ToInt32(tb_Recompensa.Text)))
+                {
+                    MessageBox.Show("Recompensa agregada");
+                    ventanaPreguntaRespuesta.LlenarInformacionPregunta();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No puede ingresar una recompensa mayor a la que usted tiene, ni menor a cero");
+                    tb_Recompensa.Clear();
+                }
             } else
             {
-                MessageBox.Show("No puede ingresar una recompensa mayor a la que usted tiene, ni menor a cero");
+                //Si el usuario ingreso texto
                 tb_Recompensa.Clear();
-            }
+                MessageBox.Show("Solo puede ingresar números !");
+
+            }    
         }
 
         private void btn_Cancelar_Click(object sender, RoutedEventArgs e)

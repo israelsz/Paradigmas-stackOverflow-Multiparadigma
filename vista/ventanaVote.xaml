@@ -5,10 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
-        Title="ventanaVote" Height="381" Width="406" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FFBDC972">
-        <TextBlock x:Name="tb_TextoVoto" HorizontalAlignment="Center" Height="31" Margin="0,93,0,0" Text="Voto" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" FontWeight="Bold" FontSize="18"/>
-        <Button x:Name="btn_VotarPositivo" Content="Votar Positivamente" HorizontalAlignment="Left" Height="66" Margin="26,180,0,0" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontFamily="Times New Roman" FontSize="16" Background="#FF22A853" Padding="4,4,4,4" UseLayoutRounding="True" BorderBrush="Black" Click="btn_VotarPositivo_Click"/>
-        <Button x:Name="btn_VotarNegativo" Content="Votar Negativamente" HorizontalAlignment="Left" Height="66" Margin="218,180,0,0" VerticalAlignment="Top" Width="158" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" BorderBrush="Black" Background="#FFDC4444" Padding="4,4,4,4" UseLayoutRounding="True" Click="btn_VotarNegativo_Click"/>
+        Title="ventanaVote" Height="381" Width="590" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFCA86F9" Offset="0.11"/>
+                <GradientStop Color="#FF6682FF" Offset="0.76"/>
+                <GradientStop Color="#FFB8C2E8" Offset="0.97"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Left" Height="59" Margin="150,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="296" Fill="White" StrokeThickness="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="119" Margin="23,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="539" Fill="White" StrokeThickness="2"/>
+        <TextBlock x:Name="tb_TextoVoto" HorizontalAlignment="Left" Height="31" Margin="171,86,0,0" Text="Voto" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" FontWeight="Bold" FontSize="18" FontFamily="Arial" TextAlignment="Center"/>
+        <Button x:Name="btn_VotarPositivo" Content="Votar Positivamente" HorizontalAlignment="Left" Height="66" Margin="107,175,0,0" VerticalAlignment="Top" Width="177" FontWeight="Bold" FontFamily="Arial" FontSize="16" Background="#FF22A853" Padding="4,4,4,4" UseLayoutRounding="True" BorderBrush="Black" Click="btn_VotarPositivo_Click" BorderThickness="3,3,3,3"/>
+        <Button x:Name="btn_VotarNegativo" Content="Votar Negativamente" HorizontalAlignment="Left" Height="66" Margin="374,174,0,0" VerticalAlignment="Top" Width="173" FontFamily="Arial" FontSize="16" FontWeight="Bold" BorderBrush="Black" Background="#FFDC4444" Padding="4,4,4,4" UseLayoutRounding="True" Click="btn_VotarNegativo_Click" BorderThickness="3,3,3,3"/>
+        <Image HorizontalAlignment="Left" Height="66" Margin="37,176,0,0" VerticalAlignment="Top" Width="61" Source="/assets/like.png"/>
+        <Image HorizontalAlignment="Left" Height="58" Margin="304,181,0,0" VerticalAlignment="Top" Width="69" Source="/assets/dislike.png"/>
     </Grid>
 </Window>

@@ -6,11 +6,21 @@
         xmlns:local="clr-namespace:vista"
         mc:Ignorable="d"
         Title="ventanaCrearRespuesta" Height="340" Width="680" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF9BE6F1">
-        <Label Content="Ingrese el contenido de su respuesta: " HorizontalAlignment="Left" Height="39" Margin="30,31,0,0" VerticalAlignment="Top" Width="310" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="tb_ContenidoRespuesta" HorizontalAlignment="Center" Height="105" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="584"/>
-        <Button x:Name="btn_AgregarRespuesta" Content="Agregar Respuesta" HorizontalAlignment="Center" Height="48" Margin="0,222,0,0" VerticalAlignment="Top" Width="216" Background="White" FontWeight="Bold" FontSize="16" Click="btn_AgregarRespuesta_Click"/>
-        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="48" Margin="30,253,0,0" VerticalAlignment="Top" Width="134" FontWeight="Bold" FontSize="14" Background="White" Click="btn_Cancelar_Click"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFCA86F9" Offset="0.11"/>
+                <GradientStop Color="#FF6682FF" Offset="0.76"/>
+                <GradientStop Color="#FFB8C2E8" Offset="0.97"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Center" Height="177" Margin="0,31,0,0" Stroke="Black" VerticalAlignment="Top" Width="612" Fill="White" StrokeThickness="2"/>
+
+        <Label Content="Ingrese el contenido de su respuesta: " HorizontalAlignment="Left" Height="39" Margin="177,46,0,0" VerticalAlignment="Top" Width="310" FontWeight="Bold" FontSize="16" FontFamily="Arial"/>
+        <TextBox x:Name="tb_ContenidoRespuesta" HorizontalAlignment="Center" Height="105" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="584" BorderBrush="Black" Background="#FFE4E1E4" FontFamily="Arial" FontSize="14" BorderThickness="2,2,2,2"/>
+        <Button x:Name="btn_AgregarRespuesta" Content="Agregar Respuesta" HorizontalAlignment="Center" Height="48" Margin="0,222,0,0" VerticalAlignment="Top" Width="216" Background="#FFEADEF5" FontWeight="Bold" FontSize="16" Click="btn_AgregarRespuesta_Click" FontFamily="Arial" BorderThickness="3,3,3,3" BorderBrush="Black"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="48" Margin="30,253,0,0" VerticalAlignment="Top" Width="134" FontWeight="Bold" FontSize="16" Background="#FFEADEF5" Click="btn_Cancelar_Click" BorderBrush="Black" Foreground="#FF030005" FontFamily="Arial" BorderThickness="3,3,3,3"/>
+        <Image HorizontalAlignment="Left" Height="45" Margin="108,40,0,0" VerticalAlignment="Top" Width="50" Source="/assets/answer.png"/>
 
     </Grid>
 </Window>

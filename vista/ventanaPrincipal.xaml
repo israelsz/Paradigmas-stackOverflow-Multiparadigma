@@ -58,7 +58,7 @@
         <Rectangle HorizontalAlignment="Left" Height="37" Margin="36,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="348" StrokeThickness="2" Fill="White"/>
         <TextBlock x:Name="TextBlock_InfoUsuario" HorizontalAlignment="Left" Height="32" Margin="45,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="16" FontWeight="Bold" Text="Conectado como:"/>
         <Rectangle HorizontalAlignment="Left" Height="37" Margin="384,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="42" Fill="White" StrokeThickness="2"/>
-        <Image HorizontalAlignment="Left" Height="33" Margin="388,24,0,0" VerticalAlignment="Top" Width="38" Source="/UserIcon.png"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="388,24,0,0" VerticalAlignment="Top" Width="38" Source="/assets/UserIcon.png"/>
         <Rectangle HorizontalAlignment="Left" Height="33" Margin="379,24,0,0" Stroke="White" VerticalAlignment="Top" Width="9" Fill="White" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>

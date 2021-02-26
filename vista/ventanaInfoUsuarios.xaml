@@ -49,7 +49,7 @@
         <Button x:Name="btn_Atras" Content="Volver atras" HorizontalAlignment="Left" Height="53" Margin="892,21,0,0" VerticalAlignment="Top" Width="156" BorderBrush="Black" Padding="1,1,1,1" BorderThickness="3,3,3,3" Background="#FFEADEF5" FontWeight="Bold" FontSize="18" Click="btn_Atras_Click" FontFamily="Arial"/>
         <TextBlock HorizontalAlignment="Left" Height="32" Margin="41,96,0,0" Text="Usuario" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontWeight="Bold" FontSize="16" Foreground="Black" TextAlignment="Center" Padding="0,5,0,0"/>
         <TextBlock HorizontalAlignment="Left" Height="32" Margin="288,96,0,0" Text="N° Preguntas realizadas" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontWeight="Bold" FontSize="16" Foreground="Black" TextAlignment="Center" Padding="0,5,0,0"/>
-        <Image HorizontalAlignment="Left" Height="52" Margin="51,16,0,0" VerticalAlignment="Top" Width="61" Source="/UserIcon.png"/>
+        <Image HorizontalAlignment="Left" Height="52" Margin="51,16,0,0" VerticalAlignment="Top" Width="61" Source="/assets/UserIcon.png"/>
         <TextBlock HorizontalAlignment="Left" Height="41" Margin="108,21,0,0" Text="Información de Usuarios Registrados" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Foreground="Black" FontSize="18" FontWeight="Bold" FontFamily="Arial" TextAlignment="Center" Background="White" Padding="0,8,0,0"/>
 
     </Grid>
