@@ -6,15 +6,20 @@ using System.Text;
 
 namespace controlador
 {
+    /// <summary>
+    /// La clase Controlador contiene toda la lógica del programa, usa al modelo y es usado por la vista.
+    /// </summary>
     public class Controlador
     {
         //Atributos
-        //Modelo
-        private Stack stack;
+        private Stack stack; //Se usa una instancia del stack del modelo, para almacenar toda la info.
         private bool stackInicialLleno;
         private static Controlador instancia;
 
         //Constructor
+        /// <summary>
+        /// Constructor de controlador, crea una instancia del stack.
+        /// </summary>
         public Controlador()
         {
             this.stack = new Stack();
@@ -22,6 +27,7 @@ namespace controlador
         }
 
         //Metodos
+        /// <value> Devuelve la instancia del controlador y si no existe, la crea </value>
         public static Controlador Instancia
         {
             get
@@ -35,8 +41,12 @@ namespace controlador
 
         }
 
+        /// <value> Devuelve o Setea la variable que indica si ya se cargo la información inicial al stack o no </value>
         public bool StackInicialLleno { get => stackInicialLleno; set => stackInicialLleno = value; }
 
+        /// <summary>
+        /// Llena de información el stack con 4 usuarios, 5 preguntas, 3 etiquetas y 10 respuestas.
+        /// </summary>
         public void llenarStackInicial()
         {
             //Etiquetas
@@ -190,6 +200,13 @@ namespace controlador
 
         }
 
+        /// <summary>
+        /// Registra a un nuevo usuario en el stack, retorna true o false dependiendo si fue posible el registro.
+        /// </summary>
+
+        /// <returns>
+        /// true si fue posible el registro, false si no fue posible el registro del usuario.
+        /// </returns>
         public bool Register(string username, string password)
         {
             //Se verifica en primer lugar que no exista el usuario:
@@ -205,6 +222,13 @@ namespace controlador
 
         }
 
+        /// <summary>
+        /// La clase Controlador contiene toda la lógica del programa, usa al modelo y es usado por la vista.
+        /// </summary>
+
+        /// <returns>
+        /// true si fue posible loguearse, false si no fue posible verificar la informacióm
+        /// </returns>
         public bool Login(string username, string password)
         {
             //Se verifica la existencia del usuario en el stack
@@ -220,6 +244,13 @@ namespace controlador
             return false;
         }
 
+        /// <summary>
+        /// Determina si hay un usuario conectado en el stack o no.
+        /// </summary>
+        
+        /// <returns>
+        /// true si hay un usuario conectado, false si no hay nadie conectado
+        /// </returns>
         public bool IsUserConnected()
         {
             if(stack.Conectado == true)
@@ -231,6 +262,13 @@ namespace controlador
             }
         }
 
+        /// <summary>
+        /// Consigue y retorna el nombre del usuario conectado.
+        /// </summary>
+
+        /// <returns>
+        /// La string del username que se encuentra conectado.
+        /// </returns>
         public string getLoggedUsername()
         {
             if (stack.Conectado == true)
@@ -240,86 +278,198 @@ namespace controlador
             return "";
         }
 
+        /// <summary>
+        /// Consigue y retorna las preguntas del stack.
+        /// </summary>
+
+        /// <returns>
+        /// la lista de preguntas.
+        /// </returns>
         public List<Pregunta> GetPreguntas()
         {
             return stack.Preguntas;
         }
 
+        /// <summary>
+        /// Desconecta al usuario conectado actualmente en el stack.
+        /// </summary>
         public void Logout()
         {
             stack.Conectado = false;
 
         }
 
+        /// <summary>
+        /// Consigue y retorna el titulo de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// La string del titulo de la pregunta
+        /// </returns>
         public string getTitulo(int indice)
         {
             return stack.Preguntas[indice].Titulo;
         }
 
+        /// <summary>
+        /// Consigue y retorna el contenido de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// La string del contenido de la pregunta
+        /// </returns>
         public string getContenido(int indice)
         {
             return stack.Preguntas[indice].Contenido;
         }
 
+        /// <summary>
+        /// Consigue y retorna la lista de etiquetas de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// La lista de etiquetas de la pregunta
+        /// </returns>
         public List<Etiqueta> GetQuestionLabels(int indice)
         {
             return stack.Preguntas[indice].Etiquetas;
         }
 
+        /// <summary>
+        /// Consigue y retorna la lista de respuestas de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// La lista de respuestas de una pregunta
+        /// </returns>
         public List<Respuesta> GetRespuestas(int indice)
         {
             return stack.Preguntas[indice].Respuestas;
         }
 
+        /// <summary>
+        /// Consigue y retorna la fecha de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// La fecha del titulo de la pregunta
+        /// </returns>
         public string getQuestionFecha(int indice)
         {
             return stack.Preguntas[indice].Fecha;
         }
 
+        /// <summary>
+        /// Consigue y retorna la cantidad de votos de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// el entero que representa los votos de la pregunta
+        /// </returns>
         public int getQuestionVotes(int indice)
         {
             return stack.Preguntas[indice].Votos;
         }
 
+        /// <summary>
+        /// Consigue y retorna el estado de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// La string del estado de la pregunta
+        /// </returns>
         public string GetQuestionStatus(int indice)
         {
             return stack.Preguntas[indice].Estado;
         }
 
+        /// <summary>
+        /// Consigue y retorna el username del usuario de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// La string del nombre del usuario
+        /// </returns>
         public string GetQuestionAutor(int indice)
         {
             return stack.Preguntas[indice].Autor.Username;
         }
 
+        /// <summary>
+        /// Consigue y retorna el id de una pregunta según su indice
+        /// </summary>
+
+        /// <returns>
+        /// El entero que representa el id de la pregunta
+        /// </returns>
         public int GetQuestionId(int indice)
         {
             return stack.Preguntas[indice].Id;
         }
 
+        /// <summary>
+        /// Consigue y retorna una pregunta del stack según su indice.
+        /// </summary>
+
+        /// <returns>
+        /// Una pregunta.
+        /// </returns>
         public Pregunta GetQuestionbyIndex(int indice)
         {
             return stack.Preguntas[indice];
         }
 
+        /// <summary>
+        /// Consigue y retorna la recompensa de una pregunta según su indice.
+        /// </summary>
+
+        /// <returns>
+        /// El entero que representa la recompensa de la pregunta.
+        /// </returns>
         public int GetQuestionReward(int indice)
         {
             return stack.Preguntas[indice].Recompensa;
         }
 
+        /// <summary>
+        /// Consigue y retorna la reputacion del usuario conectado en el stack.
+        /// </summary>
+
+        /// <returns>
+        /// El entero que representa la reputación del usuario.
+        /// </returns>
         public int GetUserReputation()
         {
             return stack.UsuarioConectado.Reputacion;
         }
 
+        /// <summary>
+        /// Consigue y retorna el Autor de una respuesta, dada la respuesta.
+        /// </summary>
+
+        /// <returns>
+        /// La string del username del autor de la respuesta.
+        /// </returns>
         public string GetAnswerAutor(Respuesta respuesta)
         {
             return respuesta.Autor.Username;
         }
 
+        /// <summary>
+        /// Consigue y retorna la lista de usuarios del stack.
+        /// </summary>
+
+        /// <returns>
+        /// La lista de usuarios.
+        /// </returns>
         public List<Usuario> GetAllUsers()
         {
             return stack.Usuarios;
         }
+
+        /// <summary>
+        /// Publica una nueva respuesta a una pregunta en el stack, recibe como entrada la pregunta a responder y el contenido de la respuesta.
+        /// </summary>
         public void Answer(Pregunta pregunta, string contenido)
         {
             //Se crea la respuesta
@@ -332,11 +482,21 @@ namespace controlador
             pregunta.Respuestas.Add(respuesta);
         }
 
+        /// <summary>
+        /// Consigue y retorna la lista de etiquetas del stack.
+        /// </summary>
+
+        /// <returns>
+        /// Lista de etiquetas.
+        /// </returns>
         public List<Etiqueta> GetEtiquetas()
         {
             return stack.Etiquetas;
         }
 
+        /// <summary>
+        /// Publica una nueva pregunta en el stack, para ello recibe el titulo, contenido y lista de etiquetas de la pregunta a publicar.
+        /// </summary>
         public void Ask(string titulo, string contenido, List<Etiqueta> etiquetas)
         {
             //Se crea la pregunta
@@ -349,6 +509,13 @@ namespace controlador
             stack.UsuarioConectado.PreguntasRealizadas.Add(pregunta);
         }
 
+        /// <summary>
+        /// Permite crear una nueva etiqueta.
+        /// </summary>
+
+        /// <returns>
+        /// true si fue posible crear la etiqueta, false si no fue posible crear la etiqueta.
+        /// </returns>
         public bool CrearEtiqueta(string nombre, string descripcion)
         {
             //Se verifica que no exista una etiqueta con el mismo nombre
@@ -366,6 +533,13 @@ namespace controlador
             }
         }
 
+        /// <summary>
+        /// Permite que el usuario actualmente conectado entregue puntos de recompensa a una pregunta.
+        /// </summary>
+
+        /// <returns>
+        /// true si fue posible la asignación de recompensa, false si no fue posible.
+        /// </returns>
         public bool Reward(Pregunta pregunta, int recompensaOfrecida)
         {
             //Se verifica que la recompensa ofrecida sea menor o igual a la recompensa del usuario y mayor a cero
@@ -383,11 +557,25 @@ namespace controlador
             }
         }
 
+        /// <summary>
+        /// Consigue y retorna las preguntas hechas por el usuario actualmente conectado.
+        /// </summary>
+
+        /// <returns>
+        /// Lista de preguntas.
+        /// </returns>
         public List<Pregunta> GetPreguntasByConnectedUser()
         {
             return stack.UsuarioConectado.PreguntasRealizadas;
         }
 
+        /// <summary>
+        /// Permite al usuario actualmente conectado aceptar una respuesta a una de las preguntas hechas por el.
+        /// </summary>
+
+        /// <returns>
+        /// true si fue posible aceptar la respuesta, false si no fue posible hacerlo.
+        /// </returns>
         public bool Accept(Pregunta pregunta,Respuesta respuesta)
         {
             //Se verifica si la pregunta ya se encuentra aceptada
@@ -408,6 +596,9 @@ namespace controlador
         }
 
         //Vote para preguntas
+        /// <summary>
+        /// Permite al usuario conectado votar positiva o negativamente por una pregunta.
+        /// </summary>
         public void Vote(Pregunta pregunta, bool voto)
         {
             //Si el voto es positivo
@@ -429,6 +620,9 @@ namespace controlador
         }
 
         //Vote para respuestas
+        /// <summary>
+        /// Permite al usuario conectado votar positiva o negativamente por una respuesta.
+        /// </summary>
         public void Vote(Respuesta respuesta, bool voto)
         {
             //Si el voto es positivo

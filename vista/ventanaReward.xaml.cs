@@ -14,13 +14,17 @@ using System.Windows.Shapes;
 namespace vista
 {
     /// <summary>
-    /// Lógica de interacción para ventanaReward.xaml
+    /// Ventana que permite otorgar recompensa a una pregunta.
     /// </summary>
     public partial class ventanaReward : Window
     {
         Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
         private int indice;
         private ventanaPreguntaRespuesta ventanaPreguntaRespuesta;
+
+        /// <summary>
+        /// Constructor de la ventana
+        /// </summary>
         public ventanaReward(int indice, ventanaPreguntaRespuesta ventanaPreguntaRespuesta)
         {
             InitializeComponent();
@@ -32,10 +36,17 @@ namespace vista
         public int Indice { get => indice; set => indice = value; }
         public ventanaPreguntaRespuesta VentanaPreguntaRespuesta { get => ventanaPreguntaRespuesta; set => ventanaPreguntaRespuesta = value; }
 
+        /// <summary>
+        /// Método que permite mostrar la información de los puntos actuales del usuario.
+        /// </summary>
         private void mostrarInfo()
         {
             tb_InfoPuntos.Text = "Usted tiene " + controlador.GetUserReputation() + " puntos de reputación \n No puede dar más puntos que los que poseé";
         }
+
+        /// <summary>
+        /// Permite asignar una recompensa a la pregunta según los datos ingresados
+        /// </summary>
         private void btn_OfrecerRecompensa_Click(object sender, RoutedEventArgs e)
         {
 
@@ -65,6 +76,9 @@ namespace vista
             }    
         }
 
+        /// <summary>
+        /// Permite cerrar la ventana.
+        /// </summary>
         private void btn_Cancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -14,26 +14,36 @@ using System.Windows.Shapes;
 namespace vista
 {
     /// <summary>
-    /// Lógica de interacción para ventanaCrearEtiqueta.xaml
+    /// Esta ventana permite crear una nueva etiqueta
     /// </summary>
     public partial class ventanaCrearEtiqueta : Window
     {
         Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
         ventanaCrearPregunta ventanaCrearPregunta;
 
+        /// <summary>
+        /// Constructor de la ventana de creación de etiqueta
+        /// </summary>
         public ventanaCrearEtiqueta(ventanaCrearPregunta ventanaCrearPregunta)
         {
             InitializeComponent();
             this.ventanaCrearPregunta = ventanaCrearPregunta;
         }
 
+        /// <value> Devuelve o setea la ventana </value>
         public ventanaCrearPregunta VentanaCrearPregunta { get => ventanaCrearPregunta; set => ventanaCrearPregunta = value; }
 
+        /// <summary>
+        /// Boton que cierra la ventana
+        /// </summary>
         private void btn_Cancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Boton que llama al método para crear etiqueta del controlador
+        /// </summary>
         private void btn_CrearEtiqueta_Click(object sender, RoutedEventArgs e)
         {
             if (tb_NombreEtiqueta.Text == "" || tb_DescripcionEtiqueta.Text == "")

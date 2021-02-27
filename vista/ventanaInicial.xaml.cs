@@ -17,13 +17,16 @@ using System.Windows.Shapes;
 namespace vista
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logica para la ventana inicial
     /// </summary>
 
     public partial class VentanaInicial : Window
     {
         Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
 
+        /// <summary>
+        /// Constructor de la ventana.
+        /// </summary>
         public VentanaInicial()
         {
             InitializeComponent();
@@ -31,6 +34,9 @@ namespace vista
             controlador.llenarStackInicial();
         }
 
+        /// <summary>
+        /// Al ser clickeado llama a register desde el controlador
+        /// </summary>
         private void botonRegister_Click(object sender, RoutedEventArgs e)
         {
             //En primer lugar se verificara si los campos se encuentran vacios
@@ -51,6 +57,9 @@ namespace vista
             pb_Password.Clear();
         }
 
+        /// <summary>
+        /// Al ser clickeado llama a Login desde el controlador.
+        /// </summary>
         private void botonLogin_Click(object sender, RoutedEventArgs e)
         {
             //En primer lugar se verificara si los campos se encuentran vacios
@@ -75,6 +84,9 @@ namespace vista
             pb_Password.Clear();
         }
 
+        /// <summary>
+        /// Permite el ingreso al stack como invitado
+        /// </summary>
         private void btn_EntrarInvitado_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Logueandose como invitado");

@@ -14,23 +14,32 @@ using System.Windows.Shapes;
 namespace vista
 {
     /// <summary>
-    /// Lógica de interacción para ventanaInfoUsuarios.xaml
+    /// Ventana que despliega la información de los usuarios registrados.
     /// </summary>
     public partial class ventanaInfoUsuarios : Window
     {
         Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
 
+        /// <summary>
+        /// Constructor de la ventana
+        /// </summary>
         public ventanaInfoUsuarios()
         {
             InitializeComponent();
             LlenarInformacion();
         }
 
+        /// <summary>
+        /// Método que permite llenas la información de los usuarios del stack.
+        /// </summary>
         public void LlenarInformacion()
         {
             lb_Usuarios.ItemsSource = controlador.GetAllUsers();
         }
 
+        /// <summary>
+        /// Permite volver atras y cerrar esta ventana.
+        /// </summary>
         private void btn_Atras_Click(object sender, RoutedEventArgs e)
         {
             ventanaPrincipal ventanaPrincipal = new ventanaPrincipal();

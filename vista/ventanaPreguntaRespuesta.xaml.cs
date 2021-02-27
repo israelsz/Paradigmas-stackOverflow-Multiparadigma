@@ -14,12 +14,16 @@ using System.Windows.Shapes;
 namespace vista
 {
     /// <summary>
-    /// Lógica de interacción para ventanaPreguntaRespuesta.xaml
+    /// Ventana que muestra una pregunta y sus respuestas con todos sus detalles.
     /// </summary>
     public partial class ventanaPreguntaRespuesta : Window
     {
         Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
         private int indice;
+
+        /// <summary>
+        /// Constructor de la ventana, recibe un indice que corresponde al indice de la pregunta.
+        /// </summary>
         public ventanaPreguntaRespuesta(int indice)
         {
             InitializeComponent();
@@ -28,8 +32,12 @@ namespace vista
             LlenarInformacionPregunta();
         }
 
+        /// <value> Devuelve o setea el indice </value>
         public int Indice { get => indice; set => indice = value; }
 
+        /// <summary>
+        /// Método que permite llenar la información del a ventana consiguiendo todos los datos necesarios gracias al controlador.
+        /// </summary>
         public void LlenarInformacionPregunta()
         {
             tb_Titulo.Text = controlador.getTitulo(Indice);
@@ -58,6 +66,9 @@ namespace vista
             }
         }
 
+        /// <summary>
+        /// Método que verifica si el usuario entro como invitado y bloquea botones en caso de que asi sea.
+        /// </summary>
         public void VerificarInvitado()
         {
             if(controlador.IsUserConnected() == false)
@@ -70,6 +81,9 @@ namespace vista
             }
         }
 
+        /// <summary>
+        /// Permite cancelar y cerraar esta ventana.
+        /// </summary>
         private void btn_Cerrar_Click(object sender, RoutedEventArgs e)
         {
             ventanaPrincipal ventanaPrincipal = new ventanaPrincipal();
@@ -77,12 +91,18 @@ namespace vista
             this.Close();
         }
 
+        /// <summary>
+        /// Permite abrir la ventana de creación de respuestas.
+        /// </summary>
         private void btn_AgregarRespuesta_Click(object sender, RoutedEventArgs e)
         {
             ventanaCrearRespuesta ventanaCrearRespuesta = new ventanaCrearRespuesta(Indice,this);
             ventanaCrearRespuesta.Show();
         }
 
+        /// <summary>
+        /// Permite abrir la ventana para otorgar recompensa a la pregunta
+        /// </summary>
         private void btn_DarRecompensa_Click(object sender, RoutedEventArgs e)
         {
             if(controlador.GetQuestionStatus(Indice) == "abierta")
@@ -96,6 +116,9 @@ namespace vista
             }
         }
 
+        /// <summary>
+        /// Permite aceptar la respuesta actualmente seleccionada
+        /// </summary>
         private void btn_AceptarRespuesta_Click(object sender, RoutedEventArgs e)
         {
             if (lb_Respuestas.SelectedItem == null)
@@ -117,12 +140,18 @@ namespace vista
             }
         }
 
+        /// <summary>
+        /// Permite votar por la pregunta
+        /// </summary>
         private void btn_VotePregunta_Click(object sender, RoutedEventArgs e)
         {
             ventanaVote ventanaVote = new ventanaVote("pregunta", this);
             ventanaVote.Show();
         }
 
+        /// <summary>
+        /// Permite votar por la respuesta seleccionada.
+        /// </summary>
         private void btn_VoteRespuesta_Click(object sender, RoutedEventArgs e)
         {
             if(lb_Respuestas.SelectedItem == null)
@@ -136,6 +165,9 @@ namespace vista
             }
         }
 
+        /// <summary>
+        /// Permite activar o desactivar la opción de votar por una respuesta verificando que sea de usuarios distintos.
+        /// </summary>
         private void lb_Respuestas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string autorRespuesta = controlador.GetAnswerAutor((modelo.Respuesta)lb_Respuestas.SelectedItem);

@@ -14,13 +14,17 @@ using System.Windows.Shapes;
 namespace vista
 {
     /// <summary>
-    /// Lógica de interacción para ventanaVote.xaml
+    /// Ventana que permite votar por una pregunta o respuesta.
     /// </summary>
     public partial class ventanaVote : Window
     {
         Controlador controlador = (Controlador)Application.Current.FindResource("controlador");
         private string tipo;
         private ventanaPreguntaRespuesta ventanaPreguntaRespuesta;
+
+        /// <summary>
+        /// Ventana que despliega la información de los usuarios registrados.
+        /// </summary>
         public ventanaVote(string tipo, ventanaPreguntaRespuesta ventanaPreguntaRespuesta)
         {
             InitializeComponent();
@@ -29,9 +33,14 @@ namespace vista
             FijarTexto();
         }
 
+        /// <value> Devuelve o setea el tipo </value>
         public string Tipo { get => tipo; set => tipo = value; }
+        /// <value> Devuelve o setea la ventana </value>
         public ventanaPreguntaRespuesta VentanaPreguntaRespuesta { get => ventanaPreguntaRespuesta; set => ventanaPreguntaRespuesta = value; }
 
+        /// <summary>
+        /// Permite desplegar información de si se vota por pregunta o por una respuesta.
+        /// </summary>
         public void FijarTexto()
         {
             //Si se trata de votar por una pregunta
@@ -46,6 +55,9 @@ namespace vista
             }
         }
 
+        /// <summary>
+        /// Permite votar positivamente por una pregunta o respuesta
+        /// </summary>
         private void btn_VotarPositivo_Click(object sender, RoutedEventArgs e)
         {
             //Si se trata de votar positivamente por una pregunta
@@ -66,6 +78,9 @@ namespace vista
             }
         }
 
+        /// <summary>
+        /// Permite votar negativamente por una pregunta o respuesta.
+        /// </summary>
         private void btn_VotarNegativo_Click(object sender, RoutedEventArgs e)
         {
             //Si se trata de votar negativamente por una pregunta
